@@ -2,7 +2,7 @@ const NPC_ATLAS = "/assets/sprites/characters/npcs-complete-4x4-v3-runtime.png";
 const VEHICLE_ATLAS = "/assets/sprites/vehicles/vehicles-realistic-types-4x2-v2-runtime.png";
 const PLAYER_ACTION_ATLAS = "/assets/sprites/characters/player-actions-realistic-4x4-v2-runtime.png";
 const PICKUP_ATLAS = "/assets/sprites/pickups/pickups-complete-5x2-v1-runtime.png";
-const ENTITY_VISUAL_MODE = "image-voxel-3d";
+const ENTITY_VISUAL_MODE = "sprite-billboard";
 const USE_IMAGE_VOXEL_3D = ENTITY_VISUAL_MODE === "image-voxel-3d";
 
 const VEHICLE_DIRECTION_ATLASES = Object.freeze({

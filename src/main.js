@@ -279,7 +279,7 @@ installCinematicEnvironment(THREE, {
   mobile: MOBILE_QUALITY,
   testMode: TEST_MODE,
 });
-const FORCE_IMAGE_VOXEL_3D_MODE = true;
+const FORCE_IMAGE_VOXEL_3D_MODE = false;
 const realisticVisuals = createRealisticEntityVisuals(THREE, { renderer });
 const touristCrowd = createTouristCrowd(THREE, {
   parent: scene,
