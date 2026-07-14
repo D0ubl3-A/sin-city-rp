@@ -1,0 +1,3 @@
+Sin City RP deployment trigger
+Date: 2026-07-14
+Includes: compact edge-anchored HUD, reduced gameplay overlays, smaller minimap, and mobile-safe control placement.
