@@ -267,6 +267,7 @@ function createRecords(seed) {
     .slice()
     .sort((a, b) => a.densityScore - b.densityScore || a.id.localeCompare(b.id))
     .forEach((record, index) => { record.activeOrder = index; });
+
   return records;
 }
 
@@ -343,8 +344,8 @@ function createTouristVoxelModel(THREE, atlasTexture, record) {
   root.userData.record = record;
   root.userData.imageVoxel3d = true;
 
-  const sampleWidth = 12;
-  const sampleHeight = 24;
+  const sampleWidth = 8;
+  const sampleHeight = 16;
   const pixels = sampleAtlasTile(atlasTexture, record.tile, sampleWidth, sampleHeight);
   let count = 0;
   if (pixels) {
@@ -445,6 +446,12 @@ function createProcedural3dTouristCrowd(THREE, options, parent) {
     .sort((a, b) => a.densityScore - b.densityScore || a.id.localeCompare(b.id))
     .forEach((record, index) => { record.activeOrder = index; });
 
+  const population = () => {
+    const requested = populationOverride ?? profile.population;
+    return imageVoxelMode ? Math.min(requested, Math.max(24, Math.floor(finite(options.voxelPopulation, 56)))) : requested;
+  };
+  const isActive = (record) => record.activeOrder < population();
+
   const group = new THREE.Group();
   group.name = options.name || "TouristCrowd3D";
   parent.add(group);
@@ -456,7 +463,17 @@ function createProcedural3dTouristCrowd(THREE, options, parent) {
   );
 
   const createTouristModel = (record) => {
-    if (imageVoxelMode) return createTouristVoxelModel(THREE, activeVoxelAtlas, record);
+    if (imageVoxelMode) {
+      if (!isActive(record)) {
+        const inactive = new THREE.Group();
+        inactive.name = `TouristImageVoxel3D_Inactive_${record.id}`;
+        inactive.visible = false;
+        inactive.userData.record = record;
+        inactive.userData.imageVoxel3d = true;
+        return inactive;
+      }
+      return createTouristVoxelModel(THREE, activeVoxelAtlas, record);
+    }
 
     const look = FALLBACK_LOOKS[record.tile % FALLBACK_LOOKS.length];
     const root = new THREE.Group();
@@ -559,9 +576,6 @@ function createProcedural3dTouristCrowd(THREE, options, parent) {
     }
   }
 
-  const population = () => populationOverride ?? profile.population;
-  const isActive = (record) => record.activeOrder < population();
-
   function update(deltaSeconds = 0, elapsedSeconds, camera = options.camera) {
     if (disposed) return 0;
     const delta = clamp(finite(deltaSeconds, 0), 0, 0.1);
@@ -600,10 +614,15 @@ function createProcedural3dTouristCrowd(THREE, options, parent) {
       }
       const stride = Math.sin(elapsed * record.tempo + record.phase) * (record.speed > 0 ? 0.42 : 0.08);
       const parts = model.userData.parts;
-      parts.legL.rotation.x = stride;
-      parts.legR.rotation.x = -stride;
-      parts.armL.rotation.x = -stride * 0.65;
-      parts.armR.rotation.x = stride * 0.65;
+      if (parts?.legL && parts?.legR && parts?.armL && parts?.armR) {
+        parts.legL.rotation.x = stride;
+        parts.legR.rotation.x = -stride;
+        parts.armL.rotation.x = -stride * 0.65;
+        parts.armR.rotation.x = stride * 0.65;
+      } else if (model.userData?.imageDerived3D || model.userData?.imageVoxel3d) {
+        model.position.y = record.y + Math.abs(stride) * 0.035;
+        model.rotation.z = stride * 0.018;
+      }
       model.visible = true;
       clusterVisible[record.cluster] += 1;
       visible += 1;
