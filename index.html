@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05040a" />
+    <meta name="description" content="Sin City RP — a neon-soaked 3D Las Vegas free-roam game." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080710'/%3E%3Cpath d='M32 5 56 32 32 59 8 32Z' fill='%23ff2e9d'/%3E%3Cpath d='M32 15 47 32 32 49 17 32Z' fill='%23080710'/%3E%3C/svg%3E" />
+    <title>Sin City RP</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game-canvas" tabindex="0" aria-label="Sin City RP 3D game world"></canvas>
+
+      <section id="loading-screen" class="screen active" aria-live="polite">
+        <div class="loading-mark">
+          <span class="diamond"></span>
+          <strong>SIN CITY <i>RP</i></strong>
+        </div>
+        <div class="load-track"><span id="load-progress"></span></div>
+        <p id="load-status">Buffering the Strip…</p>
+      </section>
+
+      <section id="start-screen" class="screen" aria-labelledby="game-title">
+        <div class="start-vignette"></div>
+        <div class="start-content">
+          <div class="eyebrow">WELCOME TO CLARK COUNTY</div>
+          <h1 id="game-title">SIN CITY <span>RP</span></h1>
+          <p class="tagline">Every neon sign hides a story. Choose yours.</p>
+          <div class="role-picker" role="group" aria-label="Choose your background">
+            <button class="role-card selected" data-role="drifter" aria-pressed="true">
+              <span class="role-icon">◆</span>
+              <strong>DRIFTER</strong>
+              <small>Balanced · Streetwise</small>
+            </button>
+            <button class="role-card" data-role="wheelman" aria-pressed="false">
+              <span class="role-icon">◈</span>
+              <strong>WHEELMAN</strong>
+              <small>Fast cars · Better handling</small>
+            </button>
+            <button class="role-card" data-role="highroller" aria-pressed="false">
+              <span class="role-icon">♠</span>
+              <strong>HIGH ROLLER</strong>
+              <small>More cash · Silver tongue</small>
+            </button>
+          </div>
+          <button id="start-button" class="primary-button"><span>ENTER THE CITY</span><kbd>ENTER</kbd></button>
+          <div class="start-foot">
+            <span>WASD MOVE</span><span>MOUSE LOOK</span><span>RMB LOCK</span><span>F VEHICLE</span><span>E INTERACT</span><span>CLICK FIRE</span><span>R RELOAD</span><span>ESC PAUSE</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="hud" class="hidden" aria-label="Game status">
+        <div class="hud-top-left glass">
+          <div class="mini-brand">SIN CITY <b>RP</b></div>
+          <div class="location-row"><span id="zone-icon">◆</span><span id="zone-name">THE STRIP</span></div>
+          <div class="world-meta"><span id="world-time">11:48 PM</span><span id="buffer-status"><i></i> CITY BUFFER: 100%</span></div>
+        </div>
+
+        <div class="hud-top-center">
+          <div id="wanted" aria-label="Pig meter"><span>🐷</span><span>🐷</span><span>🐷</span><span>🐷</span><span>🐷</span></div>
+          <div id="wanted-label">PIG METER CLEAR</div>
+        </div>
+
+        <div class="hud-top-right glass">
+          <div class="money-label">CASH</div>
+          <div id="cash">$500</div>
+          <div class="rep-row"><span>STREET REP</span><b id="reputation">0</b></div>
+        </div>
+
+        <div id="mission-card" class="glass">
+          <div class="mission-kicker">ACTIVE LEAD</div>
+          <strong id="mission-title">THE CITY NEVER SLEEPS</strong>
+          <p id="mission-text">Find a ride and explore the Strip.</p>
+          <div class="mission-progress"><span id="mission-progress"></span></div>
+        </div>
+
+        <div id="minimap-shell" class="glass">
+          <canvas id="minimap" width="220" height="220" aria-label="City minimap"></canvas>
+          <div class="map-north">N</div>
+          <div class="map-legend"><span class="legend-casino">●</span> CASINO <span class="legend-tunnel">●</span> TUNNEL</div>
+        </div>
+
+        <div id="interaction-prompt" class="hidden"><kbd id="prompt-key">E</kbd><span id="prompt-text">INTERACT</span></div>
+        <div id="crosshair" class="hidden"><i></i><i></i><i></i><i></i></div>
+
+        <div id="vehicle-hud" class="glass hidden">
+          <div class="speed"><b id="speed-value">000</b><span>MPH</span></div>
+          <div class="gear">GEAR <b id="gear-value">N</b></div>
+          <div class="vehicle-health"><span id="vehicle-health-fill"></span></div>
+        </div>
+
+        <div class="player-vitals glass">
+          <div class="vital-row health"><span class="vital-icon">+</span><div><i id="health-fill"></i></div><b id="health-value">100</b></div>
+          <div class="vital-row armor"><span class="vital-icon">◇</span><div><i id="armor-fill"></i></div><b id="armor-value">25</b></div>
+          <div class="vital-row stamina"><span class="vital-icon">»</span><div><i id="stamina-fill"></i></div><b id="stamina-value">100</b></div>
+        </div>
+
+        <div id="weapon-panel" class="glass">
+          <div id="weapon-icon">⌁</div>
+          <div><small id="weapon-name">UNARMED</small><strong id="ammo-count">—</strong></div>
+        </div>
+
+        <div id="inventory-strip"></div>
+        <div id="toast-stack" aria-live="polite"></div>
+
+        <div id="touch-controls" aria-label="Touch game controls">
+          <div id="touch-stick"><i></i></div>
+          <button data-action="interact">E</button>
+          <button data-action="vehicle">F</button>
+          <button data-action="ascend" aria-label="Plane pitch up">▲</button>
+          <button data-action="descend" aria-label="Plane pitch down">▼</button>
+          <button data-action="reload" aria-label="Reload weapon">R</button>
+          <button data-action="fire" aria-label="Fire equipped weapon">●</button>
+        </div>
+      </section>
+
+      <section id="dialogue-panel" class="modal-panel hidden" role="dialog" aria-modal="true" aria-labelledby="speaker-name">
+        <button class="modal-close" data-close="dialogue" aria-label="Close conversation">×</button>
+        <div class="speaker-row"><div id="speaker-avatar">?</div><div><small>LOCAL CONTACT</small><h2 id="speaker-name">Maya Torres</h2></div></div>
+        <div id="loyalty-meter" class="loyalty-meter" aria-label="NPC loyalty"><span>LOYALTY <b id="loyalty-tier">STRANGER</b></span><div><i id="loyalty-fill"></i></div><em id="loyalty-value">0</em></div>
+        <p id="speaker-line">You look like someone searching for opportunity.</p>
+        <div id="dialogue-history" class="dialogue-history" aria-live="polite" aria-label="Conversation transcript"></div>
+        <div id="dialogue-options" class="option-list"></div>
+        <form id="dialogue-composer" class="dialogue-composer" autocomplete="off">
+          <div class="dialogue-input-row">
+            <input id="dialogue-input" type="text" maxlength="180" autocomplete="off" enterkeyhint="send" spellcheck="true" aria-label="Say something to this character" placeholder="Ask anything, persuade them, or offer cash…" />
+            <button id="dialogue-mic-button" class="dialogue-mic" type="button" aria-label="Start voice input" aria-pressed="false"><span aria-hidden="true">●</span><b>VOICE</b></button>
+            <button id="dialogue-send-button" class="dialogue-send" type="submit">SEND</button>
+          </div>
+          <div id="dialogue-voice-status" class="dialogue-voice-status" role="status" aria-live="polite">Type a message or tap VOICE to speak.</div>
+        </form>
+        <div class="chance-note" id="chance-note">Persuasion chance is influenced by reputation.</div>
+      </section>
+
+      <section id="casino-panel" class="modal-panel wide hidden" role="dialog" aria-modal="true" aria-labelledby="casino-title">
+        <button class="modal-close" data-close="casino" aria-label="Close casino games">×</button>
+        <div class="casino-heading"><span>THE AURELIA</span><h2 id="casino-title">CASINO FLOOR</h2><p>Provably seeded local table · Play responsibly</p></div>
+        <div class="casino-tabs" role="tablist" aria-label="Casino games"><button class="active" data-game="slots" role="tab" aria-selected="true">NEON SLOTS</button><button data-game="blackjack" role="tab" aria-selected="false">BLACKJACK</button></div>
+        <div id="slots-game" class="casino-game">
+          <div class="slot-machine"><div class="reel" id="reel-1">7</div><div class="reel" id="reel-2">◆</div><div class="reel" id="reel-3">BAR</div></div>
+          <p id="slots-result">Match three symbols to win up to 12× your bet.</p>
+          <div class="bet-controls"><button data-bet="25">BET $25</button><button data-bet="100">BET $100</button><button id="spin-button" class="primary-button"><span>SPIN</span></button></div>
+        </div>
+        <div id="blackjack-game" class="casino-game hidden">
+          <div class="table-hand"><small>DEALER</small><div id="dealer-cards" class="cards"></div><b id="dealer-total"></b></div>
+          <div class="table-hand"><small>YOUR HAND</small><div id="player-cards" class="cards"></div><b id="player-total"></b></div>
+          <p id="blackjack-result">Place a $50 bet to deal.</p>
+          <div class="bet-controls"><button id="deal-button">DEAL $50</button><button id="hit-button" disabled>HIT</button><button id="stand-button" disabled>STAND</button></div>
+        </div>
+      </section>
+
+      <section id="pause-menu" class="screen hidden" role="dialog" aria-modal="true" aria-label="Paused">
+        <div class="pause-card glass">
+          <div class="eyebrow">GAME PAUSED</div>
+          <h2>SIN CITY <span>RP</span></h2>
+          <button id="resume-button" class="primary-button"><span>RESUME</span><kbd>ESC</kbd></button>
+          <button id="restart-button" class="secondary-button">RESTART NIGHT</button>
+          <div class="controls-grid">
+            <span><kbd>WASD</kbd> Move / drive</span><span><kbd>SHIFT</kbd> Sprint / boost</span>
+            <span><kbd>E</kbd> Interact</span><span><kbd>F</kbd> Enter / exit</span>
+            <span><kbd>1–3</kbd> Weapons / dialogue</span><span><kbd>CLICK</kbd> Fire</span>
+            <span><kbd>SPACE</kbd> Brake / ascend</span><span><kbd>C</kbd> Descend plane</span>
+            <span><kbd>MOUSE</kbd> Look / aim</span><span><kbd>RMB</kbd> Lock target</span><span><kbd>R</kbd> Reload weapon</span>
+            <span><kbd>M</kbd> Mute audio</span><span><kbd>ESC</kbd> Pause / close</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

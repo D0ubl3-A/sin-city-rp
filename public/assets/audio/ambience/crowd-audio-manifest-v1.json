@@ -1,0 +1,44 @@
+{
+  "duration_seconds": 30.0,
+  "endpoint": "https://api.elevenlabs.io/v1/sound-generation",
+  "generator": "generate_elevenlabs_crowd_audio.py",
+  "generator_version": "1.0.0",
+  "loop": true,
+  "model_id": "eleven_text_to_sound_v2",
+  "output_directory": "D:\\workspace\\sin-city-rp-runtime\\public\\assets\\audio\\ambience",
+  "output_format": "mp3_44100_128",
+  "prompt_influence": 0.36,
+  "provider": "ElevenLabs",
+  "schema_version": 1,
+  "tracks": [
+    {
+      "error": "ELEVEN_LABS_API_KEY or ELEVENLABS_API_KEY is not set",
+      "filename": "strip-tourist-chatter-v1.mp3",
+      "id": "strip-tourists",
+      "prompt": "Seamless environmental ambience loop on a crowded Las Vegas Strip sidewalk at night. A dense mix of adult tourists strolling in groups, layered indistinct conversation, occasional laughter and delighted reactions, shoes on pavement, subtle distant road traffic, and a faint city ventilation hum. Wide natural stereo space, lively but not chaotic, no clear foreground speaker, no intelligible sentences, no music, no sirens, no narration.",
+      "status": "blocked"
+    },
+    {
+      "error": "ELEVEN_LABS_API_KEY or ELEVENLABS_API_KEY is not set",
+      "filename": "casino-crowd-cheers-v1.mp3",
+      "id": "casino-crowd",
+      "prompt": "Seamless ambience loop inside a busy upscale Las Vegas casino. Layered adult crowd murmur, small waves of cheers and laughter after wins, poker chips clicking, cards shuffling, restrained electronic slot-machine chimes in the middle distance, and a spacious carpeted interior acoustic. No intelligible dialogue, no announcer, no prominent melody, no narration.",
+      "status": "blocked"
+    },
+    {
+      "error": "ELEVEN_LABS_API_KEY or ELEVENLABS_API_KEY is not set",
+      "filename": "fremont-party-crowd-v1.mp3",
+      "id": "fremont-party",
+      "prompt": "Seamless nighttime open-air Fremont Street party crowd ambience. Many adult visitors moving and socializing beneath a neon canopy, energetic laughter, scattered whoops and applause reacting to street performers, footsteps, and lively downtown reflections between buildings. Festive layered stereo field, no intelligible foreground words, no copyrighted melody, no narration, no sirens.",
+      "status": "blocked"
+    },
+    {
+      "error": "ELEVEN_LABS_API_KEY or ELEVENLABS_API_KEY is not set",
+      "filename": "airport-terminal-crowd-v1.mp3",
+      "id": "airport-terminal",
+      "prompt": "Seamless ambience loop in a modern Las Vegas airport terminal. A steady layered crowd of adult travelers, indistinct conversation, rolling suitcase wheels, soft footsteps, occasional distant laughter, ventilation, and a very distant public-address cadence that is completely unintelligible. Clean spacious terminal reverb, no clear words, no music, no foreground announcement.",
+      "status": "blocked"
+    }
+  ],
+  "updated_at": "2026-07-13T22:56:56Z"
+}

@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "generation": {
+    "mode": "openai-built-in-imagegen",
+    "backgroundRemoval": "flat-chroma-key-plus-local-soft-matte",
+    "artDirection": "photorealistic original supernatural open-world game sprites"
+  },
+  "directionOrder": [
+    "front",
+    "front-right",
+    "right",
+    "back-right",
+    "back",
+    "back-left",
+    "left",
+    "front-left"
+  ],
+  "assets": {
+    "jesusHealer": {
+      "type": "character-8dir",
+      "runtime": "/assets/sprites/easter-eggs/jesus-healer-8dir-v1-runtime.png",
+      "master": "/assets/sprites/easter-eggs/jesus-healer-8dir-v1.png",
+      "dimensions": [1024, 512],
+      "grid": [4, 2],
+      "frameSize": [256, 256],
+      "anchor": [0.5, 0.98]
+    },
+    "devilAntagonist": {
+      "type": "character-8dir",
+      "runtime": "/assets/sprites/easter-eggs/devil-antagonist-8dir-v1-runtime.png",
+      "master": "/assets/sprites/easter-eggs/devil-antagonist-8dir-v1.png",
+      "dimensions": [1024, 512],
+      "grid": [4, 2],
+      "frameSize": [256, 256],
+      "anchor": [0.5, 0.98]
+    },
+    "demonMinion": {
+      "type": "character-8dir",
+      "runtime": "/assets/sprites/easter-eggs/demon-minion-8dir-v1-runtime.png",
+      "master": "/assets/sprites/easter-eggs/demon-minion-8dir-v1.png",
+      "dimensions": [1024, 512],
+      "grid": [4, 2],
+      "frameSize": [256, 256],
+      "anchor": [0.5, 0.98]
+    },
+    "goldenPistol": {
+      "type": "weapon-side-profile",
+      "runtime": "/assets/sprites/easter-eggs/golden-pistol-v1-runtime.png",
+      "master": "/assets/sprites/easter-eggs/golden-pistol-v1.png",
+      "dimensions": [512, 512],
+      "travelDirection": "right",
+      "anchor": [0.5, 0.5]
+    },
+    "divineLightProjectile": {
+      "type": "projectile-side-profile",
+      "runtime": "/assets/sprites/easter-eggs/divine-light-projectile-v1-runtime.png",
+      "master": "/assets/sprites/easter-eggs/divine-light-projectile-v1.png",
+      "dimensions": [512, 256],
+      "travelDirection": "right",
+      "anchor": [0.5, 0.5]
+    },
+    "soulTakerProjectile": {
+      "type": "projectile-side-profile",
+      "runtime": "/assets/sprites/easter-eggs/soul-taker-projectile-v1-runtime.png",
+      "master": "/assets/sprites/easter-eggs/soul-taker-projectile-v1.png",
+      "dimensions": [512, 256],
+      "travelDirection": "right",
+      "anchor": [0.5, 0.5]
+    }
+  }
+}

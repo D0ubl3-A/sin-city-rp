@@ -1,0 +1,20 @@
+{
+  "name": "sin-city-rp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A procedural 3D Las Vegas free-roam roleplaying game.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "vite": "^8.1.4"
+  }
+}
