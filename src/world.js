@@ -569,11 +569,11 @@ export function createWorld(THREE, scene, rng) {
   const rotation = (y = 0) => ({ x: 0, y, z: 0 });
   const position = (x, y, z) => ({ x, y, z });
   const vehicleSpawns = [
-    { type: "sedan", position: position(-7, 0.55, 174), rotation: rotation(0), variant: "civilian" },
-    { type: "sports_car", position: position(7, 0.55, 138), rotation: rotation(Math.PI), variant: "neon" },
-    { type: "taxi", position: position(-7, 0.55, 52), rotation: rotation(0), variant: "yellow" },
-    { type: "limousine", position: position(-10.5, 0.55, -54), rotation: rotation(0), variant: "casino" },
-    { type: "streetMotorcycle", position: position(9, 0.45, -180), rotation: rotation(Math.PI), variant: "street" },
+    { type: "sedan", position: position(-27, 0.55, 174), rotation: rotation(0), variant: "civilian" },
+    { type: "sports_car", position: position(27, 0.55, 138), rotation: rotation(Math.PI), variant: "neon" },
+    { type: "taxi", position: position(-27, 0.55, 52), rotation: rotation(0), variant: "yellow" },
+    { type: "limousine", position: position(-29, 0.55, -54), rotation: rotation(0), variant: "casino" },
+    { type: "streetMotorcycle", position: position(27, 0.45, -180), rotation: rotation(Math.PI), variant: "street" },
     { type: "bicycle", position: position(22, 0.38, 202), rotation: rotation(-Math.PI / 2), variant: "strip_cruiser" },
     { type: "police_cruiser", position: position(47, 0.55, 83), rotation: rotation(Math.PI / 2), variant: "metro" },
     { type: "policeSuv", position: position(49, 0.65, 48), rotation: rotation(Math.PI / 2), variant: "metro" },
@@ -586,7 +586,7 @@ export function createWorld(THREE, scene, rng) {
 
   const npcSpawns = [
     { type: "cop", position: position(38, 0.4, 60), rotation: rotation(-Math.PI / 2), role: "patrol" },
-    { type: "cop", position: position(10, 0.4, 18), rotation: rotation(Math.PI), role: "traffic" },
+    { type: "cop", position: position(23, 0.4, 18), rotation: rotation(Math.PI), role: "traffic" },
     { type: "cop", position: position(-8, 0.4, -314), rotation: rotation(0), role: "downtown" },
     { type: "casino_security", position: position(-29, 0.4, -29), rotation: rotation(-Math.PI / 2), role: "security" },
     { type: "dealer", position: position(-30, 0.4, -16), rotation: rotation(-Math.PI / 2), role: "blackjack" },
@@ -606,7 +606,7 @@ export function createWorld(THREE, scene, rng) {
     const side = index % 2 ? -1 : 1;
     npcSpawns.push({
       type: "civilian",
-      position: position(side * randomBetween(19, 24), 0.4, randomBetween(-255, 255)),
+      position: position(side * randomBetween(24, 29), 0.4, randomBetween(-255, 255)),
       rotation: rotation(side > 0 ? -Math.PI / 2 : Math.PI / 2),
       role: "tourist",
       variant: `strip_visitor_${index}`,
@@ -663,7 +663,7 @@ export function createWorld(THREE, scene, rng) {
     const side = random() > 0.5 ? 1 : -1;
     pickupSpawns.push({
       type: choose(itemTypes),
-      position: position(side * randomBetween(17, 28), 0.35, randomBetween(-350, 335)),
+      position: position(side * randomBetween(25, 32), 0.35, randomBetween(-350, 335)),
       rotation: rotation(random() * Math.PI * 2),
       rarity: "common",
     });

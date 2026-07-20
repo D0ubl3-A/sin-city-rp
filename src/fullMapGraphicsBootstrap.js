@@ -146,8 +146,8 @@ function install(root) {
       if (barriers.length < PROFILE.props) {
         for (const side of [-1, 1]) {
           const p = center.clone();
-          if (alongX) p.z += side * (width / 2 + 1.2);
-          else p.x += side * (width / 2 + 1.2);
+          if (alongX) p.z += side * (width / 2 + 4.2);
+          else p.x += side * (width / 2 + 4.2);
           p.y = 0.34;
           barriers.push({ position: p, scale: new THREE.Vector3(1.5, 0.68, 0.34), ry: alongX ? 0 : Math.PI / 2 });
         }

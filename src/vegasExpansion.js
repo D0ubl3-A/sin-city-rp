@@ -23,6 +23,20 @@ const LANDMARKS = Object.freeze({
   redRock: { x: -1080, z: 120, radius: 300 },
 });
 
+const ROAD_CLEARANCE_CORRIDORS = Object.freeze([
+  { axis: "z", x: 0, zMin: -1225, zMax: 1355, halfWidth: 22 },
+  { axis: "z", x: -115, zMin: -1305, zMax: 1355, halfWidth: 27 },
+  { axis: "x", z: -565, xMin: -70, xMax: 950, halfWidth: 25 },
+  { axis: "z", x: 730, zMin: -785, zMax: -5, halfWidth: 21 },
+  { axis: "z", x: 690, zMin: 0, zMax: 965, halfWidth: 22 },
+  { axis: "x", z: -955, xMin: -1040, xMax: -240, halfWidth: 19 },
+  { axis: "z", x: -930, zMin: -1310, zMax: -935, halfWidth: 22 },
+  { axis: "x", z: 120, xMin: -1410, xMax: -465, halfWidth: 19 },
+  { axis: "z", x: 835, zMin: -985, zMax: -485, halfWidth: 19 },
+  { axis: "z", x: 905, zMin: -985, zMax: -485, halfWidth: 19 },
+  { axis: "z", x: -930, zMin: -1415, zMax: -805, halfWidth: 23 },
+]);
+
 const toPosition = (x, y, z) => ({ x, y, z });
 const toRotation = (y = 0) => ({ x: 0, y, z: 0 });
 
@@ -48,6 +62,12 @@ export function createVegasExpansion(THREE, options = {}) {
   };
   const between = (min, max) => min + (max - min) * random();
   const choose = (items) => items[Math.min(items.length - 1, Math.floor(random() * items.length))];
+  const blocksRoadClearance = (x, z, width = 1, depth = 1, padding = 5) => ROAD_CLEARANCE_CORRIDORS.some((road) => {
+    const halfX = width / 2 + padding;
+    const halfZ = depth / 2 + padding;
+    if (road.axis === "z") return Math.abs(x - road.x) <= road.halfWidth + halfX && z + halfZ >= road.zMin && z - halfZ <= road.zMax;
+    return Math.abs(z - road.z) <= road.halfWidth + halfZ && x + halfX >= road.xMin && x - halfX <= road.xMax;
+  });
 
   const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
   const cylinderGeometry = new THREE.CylinderGeometry(0.5, 0.5, 1, 12);
@@ -147,14 +167,17 @@ export function createVegasExpansion(THREE, options = {}) {
     for (let index = 0; index < district.count; index += 1) {
       let x;
       let z;
+      let width;
+      let depth;
       let attempts = 0;
       do {
         x = district.center[0] + between(-district.radius[0], district.radius[0]);
         z = district.center[1] + between(-district.radius[1], district.radius[1]);
+        width = between(14, 34);
+        depth = between(14, 31);
         attempts += 1;
-      } while ((Math.abs(x) < 36 || Math.abs(x + 115) < 34 || Math.abs(z + 565) < 28) && attempts < 10);
-      const width = between(14, 34);
-      const depth = between(14, 31);
+      } while (blocksRoadClearance(x, z, width, depth, 8) && attempts < 24);
+      if (blocksRoadClearance(x, z, width, depth, 5)) continue;
       const height = between(district.height[0], district.height[1]);
       const record = { position: [x, height / 2, z], size: [width, height, depth] };
       buckets[Math.floor(random() * buckets.length)].push(record);
@@ -335,7 +358,7 @@ export function createVegasExpansion(THREE, options = {}) {
   addBox("OccupationCheckpointLegEast", [4, 14, 4], [21, 7, -470], materials.occupation, { collidable: true });
   for (let index = -2; index <= 2; index += 1) {
     if (index === 0) continue;
-    addBox(`OccupationBarricade_${index}`, [10, 1.2, 1.4], [index * 11, 0.65, -448], materials.warningGlow, { collidable: true, rotationY: index * 0.08 });
+    addBox(`OccupationBarricade_${index}`, [8, 1.2, 1.4], [Math.sign(index) * (24 + Math.abs(index) * 4), 0.65, -448], materials.warningGlow, { collidable: true, rotationY: index * 0.08 });
   }
 
   // Henderson crash site ties the alien invasion into the populated valley.
@@ -377,8 +400,8 @@ export function createVegasExpansion(THREE, options = {}) {
   ];
 
   const npcSpawns = [
-    { type: "reptilian_pig_cop", position: toPosition(-10, 0.4, -463), rotation: toRotation(0), role: "occupation_enforcer", memoryId: "npc:occupation:enforcer-west", legacyMemoryIds: ["npc:reptilian_pig_cop:occupation_enforcer:14"] },
-    { type: "reptilian_pig_cop", position: toPosition(12, 0.4, -463), rotation: toRotation(0), role: "occupation_enforcer", memoryId: "npc:occupation:enforcer-east", legacyMemoryIds: ["npc:reptilian_pig_cop:occupation_enforcer:15"] },
+    { type: "reptilian_pig_cop", position: toPosition(-24, 0.4, -463), rotation: toRotation(0), role: "occupation_enforcer", memoryId: "npc:occupation:enforcer-west", legacyMemoryIds: ["npc:reptilian_pig_cop:occupation_enforcer:14"] },
+    { type: "reptilian_pig_cop", position: toPosition(24, 0.4, -463), rotation: toRotation(0), role: "occupation_enforcer", memoryId: "npc:occupation:enforcer-east", legacyMemoryIds: ["npc:reptilian_pig_cop:occupation_enforcer:15"] },
     { type: "reptilian_marshal", position: toPosition(774, 0.4, -664), rotation: toRotation(Math.PI / 2), role: "nellis_command", memoryId: "npc:nellis:reptilian-marshal", legacyMemoryIds: ["npc:reptilian_marshal:nellis_command:16"] },
     { type: "nellis_guard", position: toPosition(820, 0.4, -840), rotation: toRotation(Math.PI), role: "flight_line", memoryId: "npc:nellis:flight-line-guard", legacyMemoryIds: ["npc:nellis_guard:flight_line:17"] },
     { type: "alien_infiltrator", position: toPosition(-920, 0.4, -1030), rotation: toRotation(Math.PI), role: "groom_observer", memoryId: "npc:area51:groom-observer", legacyMemoryIds: ["npc:alien_infiltrator:groom_observer:18"] },
