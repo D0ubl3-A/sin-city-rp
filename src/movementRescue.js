@@ -1,23 +1,16 @@
-const MOVEMENT_CODES = Object.freeze([
-  "KeyW",
-  "KeyA",
-  "KeyS",
-  "KeyD",
-  "ArrowUp",
-  "ArrowDown",
-]);
+import {
+  LOCOMOTION_CODES,
+  createMovementFailureTracker,
+} from "./movementRescueCore.js";
 
-const MOVEMENT_CODE_SET = new Set(MOVEMENT_CODES);
+const MOVEMENT_CODE_SET = new Set(LOCOMOTION_CODES);
 const RESCUE_WINDOW_MS = 45_000;
 const PROBE_DURATION_MS = 720;
-const FAILURE_WINDOW_MS = 8_000;
-const MIN_MOVEMENT_DISTANCE = 0.075;
-const REQUIRED_DISTINCT_FAILURES = 2;
 
+const failureTracker = createMovementFailureTracker();
 const runtime = {
   activeKeys: new Set(),
   probes: new Map(),
-  failures: [],
   rescued: false,
   rescueReason: null,
   rescueAt: null,
@@ -43,31 +36,22 @@ function playerPosition(state) {
   return { x, y, z };
 }
 
-function distanceBetween(a, b) {
-  return Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z);
-}
-
 function movementCanBeProbed(state) {
   if (state?.phase !== "playing" || state?.player?.mode !== "onFoot") return false;
   if (runtime.armedAt === null) runtime.armedAt = performance.now();
   return performance.now() - runtime.armedAt <= RESCUE_WINDOW_MS;
 }
 
-function pruneFailures(now = performance.now()) {
-  runtime.failures = runtime.failures.filter((failure) => now - failure.at <= FAILURE_WINDOW_MS);
-}
-
 function exposeDiagnostics() {
   window.__SIN_CITY_MOVEMENT_RESCUE__ = Object.freeze({
     getStatus() {
-      pruneFailures();
       return {
         armed: !runtime.rescued && (runtime.armedAt === null || performance.now() - runtime.armedAt <= RESCUE_WINDOW_MS),
         rescued: runtime.rescued,
         rescueReason: runtime.rescueReason,
         rescueAt: runtime.rescueAt,
         activeKeys: [...runtime.activeKeys],
-        failedDirections: [...new Set(runtime.failures.map((failure) => failure.code))],
+        failedDirections: [...failureTracker.snapshot(performance.now()).failedDirections],
       };
     },
     rescueNow(reason = "manual-recovery") {
@@ -91,7 +75,7 @@ function rescuePlayer(reason) {
   runtime.rescueReason = String(reason || "movement-softlock");
   runtime.rescueAt = Date.now();
   runtime.probes.clear();
-  runtime.failures = [];
+  failureTracker.reset();
 
   document.documentElement.dataset.movementRescue = "completed";
   document.documentElement.dataset.movementRescueReason = runtime.rescueReason;
@@ -121,24 +105,14 @@ function finishProbe(code, probeId) {
   const currentPosition = playerPosition(state);
   if (!currentPosition) return;
 
-  const moved = distanceBetween(probe.position, currentPosition);
-  if (moved >= MIN_MOVEMENT_DISTANCE) {
-    runtime.failures = [];
-    return;
-  }
-
-  const now = performance.now();
-  pruneFailures(now);
-  runtime.failures.push({ code, at: now, position: currentPosition });
-
-  const distinctFailures = new Set(runtime.failures.map((failure) => failure.code));
-  const firstFailure = runtime.failures[0];
-  const remainedPinned = firstFailure
-    ? distanceBetween(firstFailure.position, currentPosition) < MIN_MOVEMENT_DISTANCE
-    : false;
-
-  if (distinctFailures.size >= REQUIRED_DISTINCT_FAILURES && remainedPinned) {
-    rescuePlayer(`movement-softlock:${[...distinctFailures].join(",")}`);
+  const result = failureTracker.recordProbe({
+    code,
+    startPosition: probe.position,
+    endPosition: currentPosition,
+    at: performance.now(),
+  });
+  if (result.shouldRescue) {
+    rescuePlayer(`movement-softlock:${result.failedDirections.join(",")}`);
   }
 }
 
@@ -150,7 +124,7 @@ function beginProbe(code) {
   if (!position) return;
 
   const id = `${code}:${performance.now()}:${Math.random()}`;
-  runtime.probes.set(code, { id, position, startedAt: performance.now() });
+  runtime.probes.set(code, { id, position });
   window.setTimeout(() => finishProbe(code, id), PROBE_DURATION_MS);
 }
 
