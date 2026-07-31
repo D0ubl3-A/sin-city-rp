@@ -24,7 +24,10 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run build
-      - run: npm test
+      - name: Verify movement recovery detector
+        run: npx playwright test tests/00-movement-rescue.spec.js --project=chromium --retries=0
+      - name: Run full gameplay suite
+        run: npm test
       - name: Upload Playwright report on failure
         if: failure()
         uses: actions/upload-artifact@v4
