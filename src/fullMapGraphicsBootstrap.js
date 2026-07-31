@@ -1,3 +1,4 @@
+import "./movementRescue.js";
 import * as THREE from "three";
 
 const QUALITY = (() => {
