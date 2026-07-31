@@ -5,12 +5,9 @@ const MOVEMENT_CODES = Object.freeze([
   "KeyD",
   "ArrowUp",
   "ArrowDown",
-  "ArrowLeft",
-  "ArrowRight",
 ]);
 
 const MOVEMENT_CODE_SET = new Set(MOVEMENT_CODES);
-const MODULE_STARTED_AT = performance.now();
 const RESCUE_WINDOW_MS = 45_000;
 const PROBE_DURATION_MS = 720;
 const FAILURE_WINDOW_MS = 8_000;
@@ -24,6 +21,7 @@ const runtime = {
   rescued: false,
   rescueReason: null,
   rescueAt: null,
+  armedAt: null,
 };
 
 function parseGameState() {
@@ -50,9 +48,9 @@ function distanceBetween(a, b) {
 }
 
 function movementCanBeProbed(state) {
-  return state?.phase === "playing"
-    && state?.player?.mode === "onFoot"
-    && performance.now() - MODULE_STARTED_AT <= RESCUE_WINDOW_MS;
+  if (state?.phase !== "playing" || state?.player?.mode !== "onFoot") return false;
+  if (runtime.armedAt === null) runtime.armedAt = performance.now();
+  return performance.now() - runtime.armedAt <= RESCUE_WINDOW_MS;
 }
 
 function pruneFailures(now = performance.now()) {
@@ -64,7 +62,7 @@ function exposeDiagnostics() {
     getStatus() {
       pruneFailures();
       return {
-        armed: !runtime.rescued && performance.now() - MODULE_STARTED_AT <= RESCUE_WINDOW_MS,
+        armed: !runtime.rescued && (runtime.armedAt === null || performance.now() - runtime.armedAt <= RESCUE_WINDOW_MS),
         rescued: runtime.rescued,
         rescueReason: runtime.rescueReason,
         rescueAt: runtime.rescueAt,
