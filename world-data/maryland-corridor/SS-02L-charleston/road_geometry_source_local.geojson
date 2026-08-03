@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "name": "SS-02L-MARYLAND-PARKWAY-CHARLESTON-BOULEVARD",
+  "coordinate_space": "JC_VEGAS_OSM source-local",
+  "features": [
+    {"type":"Feature","id":"jc_osm_charleston_eastbound_west","properties":{"name":"East Charleston Boulevard","class":"primary","tagged_maxspeed":"35 mph","source_ref":"JC_VEGAS_OSM"},"geometry":{"type":"LineString","coordinates":[[10548.4,7183.7],[10584.6,7183.6],[10625.5,7183.4],[10632.3,7183.4]]}},
+    {"type":"Feature","id":"jc_osm_charleston_eastbound_intersection","properties":{"name":"East Charleston Boulevard","class":"primary","tagged_maxspeed":"35 mph","source_ref":"JC_VEGAS_OSM"},"geometry":{"type":"LineString","coordinates":[[10632.3,7183.4],[10642.2,7183.4],[10649.2,7183.4]]}},
+    {"type":"Feature","id":"jc_osm_charleston_eastbound_east","properties":{"name":"East Charleston Boulevard","class":"primary","tagged_maxspeed":"35 mph","source_ref":"JC_VEGAS_OSM"},"geometry":{"type":"LineString","coordinates":[[10649.2,7183.4],[10662.4,7183.3],[10690.6,7183.2],[10712.6,7183.2]]}},
+    {"type":"Feature","id":"jc_osm_charleston_westbound_intersection","properties":{"name":"East Charleston Boulevard","class":"primary","tagged_maxspeed":"35 mph","source_ref":"JC_VEGAS_OSM"},"geometry":{"type":"LineString","coordinates":[[10632.3,7198.9],[10649.3,7198.9]]}},
+    {"type":"Feature","id":"jc_osm_maryland_northbound","properties":{"name":"South Maryland Parkway","class":"primary","tagged_maxspeed":"30 mph","source_ref":"JC_VEGAS_OSM"},"geometry":{"type":"LineString","coordinates":[[10649.2,7183.4],[10649.3,7198.9]]}},
+    {"type":"Feature","id":"jc_osm_maryland_southbound","properties":{"name":"South Maryland Parkway","class":"primary","tagged_maxspeed":"30 mph","source_ref":"JC_VEGAS_OSM"},"geometry":{"type":"LineString","coordinates":[[10632.3,7183.4],[10632.2,7199.1]]}}
+  ]
+}
