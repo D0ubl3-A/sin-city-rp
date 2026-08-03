@@ -1,0 +1,46 @@
+{
+  "run_at": "2026-08-03T09:01:21.779048+00:00",
+  "section_id": "SS-01F-WELCOME-SIGN",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {
+    "passed": 12,
+    "total": 12,
+    "results": {
+      "coordinate_range": true,
+      "utm_zone_11n": true,
+      "national_register_identity": true,
+      "address_conflict_preserved": true,
+      "not_misclassified_as_building": true,
+      "parcel_not_fabricated": true,
+      "terrain_not_fabricated": true,
+      "semantic_model_released": true,
+      "final_visual_blocked": true,
+      "design_fields_complete": true,
+      "site_graph_complete": true,
+      "source_registry_complete": true
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "released": [
+    "identity_record",
+    "historic_design_dossier",
+    "semantic_sign_model",
+    "site_context_graph",
+    "parking_history_record"
+  ],
+  "blocked": [
+    "survey-grade sign geometry",
+    "foundation geometry",
+    "parking-island polygon",
+    "parking-space polygons",
+    "walkway polygon",
+    "crosswalk polygons",
+    "signal-pole coordinates",
+    "terrain samples",
+    "final sprite",
+    "final 3D asset",
+    "survey-aligned placement"
+  ],
+  "next_section": "REGISTER_WHOLE_MAP_SECTION_INVENTORY"
+}
