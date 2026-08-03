@@ -1,0 +1,16 @@
+{
+  "section_id": "SS-02C-PARADISE-ROAD-AIRPORT-CORRIDOR",
+  "edges": [
+    {"subject":"corridor:paradise_road_airport","predicate":"contains","object":"road:paradise_road","source_ref":"rtc_airport_bus_guide"},
+    {"subject":"transit:route_108","predicate":"named_for_corridor","object":"road:paradise_road","source_ref":"rtc_airport_bus_guide"},
+    {"subject":"transit:route_108","predicate":"serves","object":"airport:harry_reid_terminal_1","source_ref":"rtc_airport_routes"},
+    {"subject":"transit:route_109","predicate":"serves","object":"airport:harry_reid_terminal_1","source_ref":"rtc_airport_routes"},
+    {"subject":"transit:centennial_express","predicate":"serves","object":"airport:harry_reid_terminal_1","source_ref":"rtc_airport_routes"},
+    {"subject":"transit:centennial_express","predicate":"serves","object":"airport:harry_reid_terminal_3","source_ref":"rtc_airport_routes"},
+    {"subject":"road:paradise_road","predicate":"crosses","object":"road:tropicana_avenue","source_ref":"rtc_current_detours"},
+    {"subject":"road:paradise_road","predicate":"connects_toward","object":"road:university_center_drive","source_ref":"rtc_current_detours"},
+    {"subject":"road:paradise_road","predicate":"participates_in_access_to","object":"airport:harry_reid_terminal_1","source_ref":"rtc_current_detours"},
+    {"subject":"corridor:paradise_road_airport","predicate":"intersects_regulatory_context","object":"layer:airport_airspace","source_ref":"clark_airzone"},
+    {"subject":"corridor:paradise_road_airport","predicate":"intersects_regulatory_context","object":"layer:airport_height","source_ref":"clark_airportheight"}
+  ]
+}
