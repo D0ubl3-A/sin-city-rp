@@ -1,0 +1,14 @@
+{
+  "run_at": "2026-08-03T23:07:41.911854+00:00",
+  "section_id": "SS-02L-MARYLAND-PARKWAY-CHARLESTON-BOULEVARD",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {"passed": 13, "total": 13},
+  "errors": [],
+  "warnings": [
+    "Tagged maxspeed values are retained as source attributes and are not asserted to be current posted limits.",
+    "The midpoint anchor is a documented geometric derivation in source-local space, not a surveyed intersection coordinate."
+  ],
+  "released": ["intersection identity", "derived source-local intersection anchor", "512 x 512 source-local section bounds", "six recovered carriageway centerline features", "road classes and tagged speed metadata", "source and license ledger"],
+  "blocked": ["EPSG:32611 section anchor", "terrain tile join", "Clark County parcels and rights-of-way", "building registry subset", "architecture records", "final visual and collision assets"],
+  "next_section": "SS-02M-MARYLAND-PARKWAY-BONANZA-ROAD"
+}
