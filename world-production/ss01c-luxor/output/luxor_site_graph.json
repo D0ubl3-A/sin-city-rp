@@ -1,0 +1,39 @@
+{
+  "schema": "sin-city-location-graph-v1",
+  "section_id": "SS-01C-LUXOR",
+  "nodes": [
+    {"id":"property:luxor","type":"property","state":"SOURCE-CONFIRMED"},
+    {"id":"component:pyramid","type":"hotel_casino_primary_structure","state":"SOURCE-CONFIRMED"},
+    {"id":"component:sphinx_main_entrance","type":"themed_porte_cochere","state":"SOURCE-CONFIRMED"},
+    {"id":"component:obelisk","type":"themed_monument","state":"SOURCE-CONFIRMED"},
+    {"id":"component:east_tower","type":"hotel_tower","state":"SOURCE-CONFIRMED"},
+    {"id":"component:west_tower","type":"hotel_tower","state":"SOURCE-CONFIRMED"},
+    {"id":"component:west_parking_garage","type":"parking_structure","state":"SOURCE-CONFIRMED"},
+    {"id":"component:oasis_pool","type":"pool_complex","state":"SOURCE-CONFIRMED"},
+    {"id":"component:north_bus_plaza","type":"transit_loading_area","state":"SOURCE-CONFIRMED"},
+    {"id":"component:mandalay_place_connection","type":"pedestrian_retail_connection","state":"SOURCE-CONFIRMED"},
+    {"id":"component:excalibur_walkway","type":"pedestrian_connection","state":"SOURCE-CONFIRMED"},
+    {"id":"road:south_las_vegas_boulevard","type":"road","state":"SOURCE-CONFIRMED"},
+    {"id":"road:luxor_drive","type":"road","state":"SOURCE-CONFIRMED"},
+    {"id":"road:reno_avenue","type":"road","state":"SOURCE-CONFIRMED"},
+    {"id":"road:mandalay_bay_road","type":"road","state":"SOURCE-CONFIRMED"},
+    {"id":"road:frank_sinatra_drive","type":"road","state":"SOURCE-CONFIRMED"}
+  ],
+  "edges": [
+    {"from":"property:luxor","to":"component:pyramid","type":"contains"},
+    {"from":"property:luxor","to":"component:sphinx_main_entrance","type":"contains"},
+    {"from":"property:luxor","to":"component:obelisk","type":"contains"},
+    {"from":"property:luxor","to":"component:east_tower","type":"contains"},
+    {"from":"property:luxor","to":"component:west_tower","type":"contains"},
+    {"from":"property:luxor","to":"component:west_parking_garage","type":"contains"},
+    {"from":"property:luxor","to":"component:oasis_pool","type":"contains"},
+    {"from":"property:luxor","to":"component:north_bus_plaza","type":"contains"},
+    {"from":"property:luxor","to":"component:mandalay_place_connection","type":"contains"},
+    {"from":"property:luxor","to":"component:excalibur_walkway","type":"contains"},
+    {"from":"property:luxor","to":"road:south_las_vegas_boulevard","type":"accessed_by","relationship":"primary frontage and main entrance"},
+    {"from":"property:luxor","to":"road:luxor_drive","type":"accessed_by","relationship":"internal west parking and service circulation"},
+    {"from":"property:luxor","to":"road:reno_avenue","type":"accessed_by","relationship":"north/east site edge and north entrance access"},
+    {"from":"property:luxor","to":"road:mandalay_bay_road","type":"accessed_by","relationship":"south site edge and neighboring campus access"},
+    {"from":"property:luxor","to":"road:frank_sinatra_drive","type":"accessed_by","relationship":"western campus circulation"}
+  ]
+}
