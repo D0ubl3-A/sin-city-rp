@@ -1,0 +1,126 @@
+{
+  "schema": "sin-city-location-dossier-v1",
+  "section_id": "SS-01F-WELCOME-SIGN",
+  "location_id": "ss01_lm_welcome_sign",
+  "identity": {
+    "name": "Welcome to Fabulous Las Vegas Sign",
+    "category": "historic_roadside_neon_sign",
+    "jurisdiction": "Clark County, Paradise Township",
+    "national_register_reference": "09000284",
+    "national_register_listed": "2009-05-01",
+    "fact_state": "SOURCE-CONFIRMED"
+  },
+  "location": {
+    "description": "Las Vegas Boulevard public right-of-way median, approximately 0.5 mile south of Russell Road",
+    "published_address_conflict": ["5100 S Las Vegas Blvd", "5200 S Las Vegas Blvd"],
+    "address_resolution": "UNRESOLVED_CONFLICT_PRESERVED",
+    "longitude": -115.172748,
+    "latitude": 36.082052,
+    "utm_crs": "EPSG:32611",
+    "utm_x": 664523.731,
+    "utm_y": 3994594.655,
+    "terrain_z_m": null,
+    "point_role": "published landmark anchor only; not a survey monument, parcel centroid, sign foundation centroid, or final model origin",
+    "fact_state": "SOURCE-CONFIRMED_NONAUTHORITATIVE_COORDINATE"
+  },
+  "architecture": {
+    "style": "Googie",
+    "designer": "Betty Willis",
+    "erected": 1959,
+    "height_ft": 25,
+    "form": "horizontally stretched diamond with pointed top and bottom and rounded side angles",
+    "support": "two offset flat poles joined by an upper crosspiece",
+    "faces": "double-sided internally illuminated cabinet",
+    "front_text": ["WELCOME", "to Fabulous", "LAS VEGAS", "NEVADA"],
+    "rear_text": ["DRIVE", "CAREFULLY", "Come Back", "SOON"],
+    "lighting": [
+      "perimeter flashing and chasing incandescent bulbs",
+      "white neon silver-dollar circles",
+      "red letters outlined in neon",
+      "eight-point red star outlined in yellow neon"
+    ],
+    "cabinet_face": "translucent white plastic with blue and red painted text",
+    "fact_state": "SOURCE-CONFIRMED",
+    "unresolved": [
+      "survey-grade cabinet width and depth",
+      "pole section dimensions",
+      "foundation geometry",
+      "exact bulb count and spacing",
+      "neon tube routing",
+      "electrical enclosure geometry",
+      "material PBR values"
+    ]
+  },
+  "site_context": {
+    "road": "South Las Vegas Boulevard",
+    "placement": "expanded center median/public right-of-way",
+    "parking_history": [
+      {"year": 2008, "added_spaces": 12, "bus_limo_loading_areas": 2, "paved_walkway": true},
+      {"year": 2012, "authorized_additional_spaces": 20},
+      {"year": 2015, "added_spaces": 21, "marked_crosswalks": true, "pedestrian_signals": true}
+    ],
+    "known_relationships": [
+      "south of Russell Road",
+      "north of historic airport stone pillars",
+      "opposite Bali Hai Golf Club",
+      "dedicated median parking and pedestrian viewing area",
+      "crosswalk and pedestrian signal system"
+    ],
+    "fact_state": "SOURCE-CONFIRMED"
+  },
+  "parcel": {
+    "apn": null,
+    "polygon": null,
+    "applicability_note": "The National Register identifies the resource in public right-of-way; an assessor parcel may not be the correct controlling geometry.",
+    "required_resolution": "Clark County right-of-way, transportation, or survey geometry",
+    "fact_state": "UNRESOLVED_NOT_ASSUMED"
+  },
+  "building_footprints": {
+    "applicability": "NOT_A_BUILDING",
+    "required_geometry": [
+      "sign cabinet outline",
+      "support-pole centerlines",
+      "foundation footprints",
+      "parking-island polygon",
+      "walkway polygon",
+      "parking-space polygons",
+      "crosswalk polygons",
+      "signal-pole points"
+    ],
+    "fact_state": "UNRESOLVED"
+  },
+  "terrain": {
+    "elevation_m": null,
+    "required_source": "USGS 3DEP or Clark County survey at approved sign and site origins",
+    "fact_state": "UNRESOLVED"
+  },
+  "sources": [
+    {"id": "nps_weekly_list_2009", "authority": "National Park Service", "url": "https://www.nps.gov/subjects/nationalregister/upload/weekly-list-2009-national-register-of-historic-places.pdf"},
+    {"id": "clark_county_history_timeline", "authority": "Clark County", "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:1885026b-ec70-4a66-b176-cac868ab2cc7/original/as/history-timeline.pdf"},
+    {"id": "visit_las_vegas_listing", "authority": "Las Vegas Convention and Visitors Authority", "url": "https://www.visitlasvegas.com/listing/welcome-to-fabulous-las-vegas-sign/35219/"},
+    {"id": "neon_museum_history", "authority": "The Neon Museum", "url": "https://neonmuseum.org/news/put-a-star-on-it-a-brief-history-of-the-welcome-sign/"},
+    {"id": "clark_county_gismo", "authority": "Clark County GISMO", "url": "https://www.clarkcountynv.gov/government/departments/geographic_info_systems/"}
+  ],
+  "gates": {
+    "LOCATION_GATE": "PASS_WITH_NONAUTHORITATIVE_ANCHOR",
+    "PARCEL_GATE": "NOT_APPLICABLE_PENDING_RIGHT_OF_WAY_GEOMETRY",
+    "BUILDING_GATE": "NOT_APPLICABLE_SIGN_GEOMETRY_GATE_USED",
+    "SIGN_GEOMETRY_GATE": "PARTIAL_PASS",
+    "IDENTITY_GATE": "PASS",
+    "ARCHITECTURE_GATE": "PASS_FOR_SEMANTIC_MODEL",
+    "CONTEXT_GATE": "PASS",
+    "SOURCE_GATE": "PASS"
+  },
+  "release": {
+    "identity_record": true,
+    "historic_design_dossier": true,
+    "semantic_sign_model": true,
+    "site_context_graph": true,
+    "parking_history_record": true,
+    "final_sprite": false,
+    "final_3d_asset": false,
+    "survey_aligned_placement": false,
+    "terrain_conforming_placement": false
+  },
+  "generation_status": "evidence_complete_for_semantics_visual_geometry_blocked"
+}
