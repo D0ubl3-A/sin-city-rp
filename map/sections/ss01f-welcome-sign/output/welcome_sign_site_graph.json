@@ -1,0 +1,28 @@
+{
+  "schema": "sin-city-location-graph-v1",
+  "section_id": "SS-01F-WELCOME-SIGN",
+  "nodes": [
+    {"id": "asset:welcome_sign", "type": "historic_neon_sign"},
+    {"id": "site:median_viewing_area", "type": "public_viewing_area"},
+    {"id": "site:parking_area", "type": "median_parking"},
+    {"id": "site:paved_walkway", "type": "pedestrian_walkway"},
+    {"id": "site:crosswalks", "type": "marked_crosswalk_system"},
+    {"id": "site:pedestrian_signals", "type": "traffic_signal_system"},
+    {"id": "road:las_vegas_boulevard", "type": "arterial_road"},
+    {"id": "road:russell_road", "type": "arterial_road"},
+    {"id": "landmark:airport_stone_pillars", "type": "historic_context_landmark"},
+    {"id": "property:bali_hai_golf_club", "type": "adjacent_property"}
+  ],
+  "edges": [
+    {"from": "asset:welcome_sign", "to": "site:median_viewing_area", "type": "located_in"},
+    {"from": "site:median_viewing_area", "to": "site:parking_area", "type": "served_by"},
+    {"from": "site:parking_area", "to": "site:paved_walkway", "type": "connected_by"},
+    {"from": "site:paved_walkway", "to": "asset:welcome_sign", "type": "approaches"},
+    {"from": "site:crosswalks", "to": "site:median_viewing_area", "type": "provides_access_to"},
+    {"from": "site:pedestrian_signals", "to": "site:crosswalks", "type": "controls"},
+    {"from": "asset:welcome_sign", "to": "road:las_vegas_boulevard", "type": "within_median_of"},
+    {"from": "asset:welcome_sign", "to": "road:russell_road", "type": "approximately_half_mile_south_of"},
+    {"from": "asset:welcome_sign", "to": "landmark:airport_stone_pillars", "type": "north_of"},
+    {"from": "asset:welcome_sign", "to": "property:bali_hai_golf_club", "type": "opposite"}
+  ]
+}
