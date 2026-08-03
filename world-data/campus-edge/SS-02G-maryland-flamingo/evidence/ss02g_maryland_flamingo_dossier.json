@@ -1,0 +1,27 @@
+{
+  "schema": "sin-city-geographic-section-v1",
+  "section_id": "SS-02G-MARYLAND-PARKWAY-FLAMINGO-CAMPUS-EDGE",
+  "identity": {"name": "Maryland Parkway / Flamingo campus edge", "state": "PARTIAL_PASS", "source_refs": ["unlv_fab1", "unlv_masterplan"]},
+  "coordinates": {"verified_points": [], "section_polygon": null, "utm_geometry": null, "state": "BLOCKED", "reason": "No authoritative coordinate feature or surveyed section polygon was captured."},
+  "parcels": {"apns": [], "polygons": [], "state": "BLOCKED", "reason": "No complete Clark County parcel/right-of-way response was captured."},
+  "roads": {"confirmed_names": ["South Maryland Parkway", "East Flamingo Road"], "geometry": null, "temporary_context": "June 2026 BRT construction only; not permanent geometry", "state": "CONTEXT_PASS_GEOMETRY_BLOCKED"},
+  "terrain": {"samples": [], "state": "BLOCKED", "required_source_ref": "usgs_3dep"},
+  "buildings": {
+    "released": [{"id": "fab1", "name": "Flamingo Auxiliary Building 1", "address": "1325 Flamingo Rd., Las Vegas, NV 89119", "floors": 1, "gross_sqft": 64986, "uses": ["College of Engineering Robotics Lab", "UNLV Surplus"], "source_ref": "unlv_fab1"}],
+    "context_only": ["Maryland Administrative Building 1", "Maryland Administrative Building 2", "Stan Fulton Building", "Paradise Elementary School", "UNLV/CSUN Preschool"],
+    "footprints": [],
+    "state": "IDENTITY_PARTIAL_PASS_FOOTPRINT_BLOCKED"
+  },
+  "architecture": {"released": [{"asset": "fab1", "facts": {"floors": 1, "gross_sqft": 64986}, "source_ref": "unlv_fab1"}], "blocked": ["roof geometry", "facade dimensions", "materials", "structural system", "authoritative footprint"], "state": "PARTIAL_PASS"},
+  "context": {"planning_district": "Flamingo District", "goals": ["community partnerships", "pedestrian pathways", "desert-smart landscaping", "bike paths and lockers", "transit connections"], "source_ref": "unlv_masterplan"},
+  "sources": [
+    {"id": "unlv_fab1", "authority": "University of Nevada, Las Vegas", "url": "https://www.unlv.edu/maps/fab-1"},
+    {"id": "unlv_building_directory", "authority": "University of Nevada, Las Vegas", "url": "https://www.unlv.edu/maps/buildings/off-campus-list"},
+    {"id": "unlv_masterplan", "authority": "University of Nevada, Las Vegas", "url": "https://www.unlv.edu/masterplan"},
+    {"id": "unlv_june_2026_brt", "authority": "University of Nevada, Las Vegas", "url": "https://www.unlv.edu/announcement/university-notifications/maryland-parkway-construction-impacts-june"},
+    {"id": "clark_county_gis", "authority": "Clark County GIS", "url": "https://maps.clarkcountynv.gov/"},
+    {"id": "usgs_3dep", "authority": "U.S. Geological Survey", "url": "https://www.usgs.gov/3d-elevation-program"}
+  ],
+  "gates": {"SOURCE_GATE": "PASS", "SEMANTIC_EDGE_GATE": "PASS", "IDENTITY_GATE": "PARTIAL_PASS", "ROAD_CONTEXT_GATE": "PASS", "COORDINATE_GATE": "BLOCKED", "PARCEL_GATE": "BLOCKED", "ROAD_GEOMETRY_GATE": "BLOCKED", "TERRAIN_GATE": "BLOCKED", "BUILDING_FOOTPRINT_GATE": "BLOCKED", "ARCHITECTURE_GATE": "PARTIAL_PASS", "FINAL_ASSET_GATE": "BLOCKED"},
+  "release": {"dossier": true, "semantic_graph": true, "building_identity_record": true, "partial_architecture_record": true, "final_roads": false, "terrain_mesh": false, "final_building_models": false, "final_visual_section": false}
+}
