@@ -1,0 +1,24 @@
+{
+  "run_at": "2026-08-03T06:00:06.765925+00:00",
+  "section_id": "SS-01C-LUXOR",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {
+    "passed": 8,
+    "total": 8,
+    "results": [
+      {"name":"coordinate_range","passed":true},
+      {"name":"utm_zone_11n","passed":true},
+      {"name":"identity_source","passed":true},
+      {"name":"parcel_not_fabricated","passed":true},
+      {"name":"visual_asset_blocked","passed":true},
+      {"name":"site_graph_released","passed":true},
+      {"name":"all_sources_registered","passed":true},
+      {"name":"required_components_present","passed":true}
+    ]
+  },
+  "errors": [],
+  "warnings": [],
+  "released": ["semantic_site_graph","road_relationship_graph","identity_and_address_record","architecture_dossier_partial"],
+  "blocked": ["parcel_polygon","APN","authoritative exterior footprints","USGS terrain sample","final sprite","final 3D asset","parcel-aligned model origin"],
+  "next_section": "SS-01D-MANDALAY-BAY"
+}
