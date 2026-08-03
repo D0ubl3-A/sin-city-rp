@@ -1,0 +1,66 @@
+{
+  "schema": "sin-city-location-dossier-v1",
+  "section_id": "SS-01C-LUXOR",
+  "location_id": "ss01_lm_luxor",
+  "identity": {
+    "name": "Luxor Hotel & Casino",
+    "category": "integrated_resort_casino",
+    "operator": "MGM Resorts International",
+    "address": {
+      "street_number": "3900",
+      "street_name": "S Las Vegas Blvd",
+      "city": "Las Vegas",
+      "state": "SOURCE-CONFIRMED",
+      "postal_code": "89119"
+    }
+  },
+  "coordinates": {
+    "crs": "EPSG:32611",
+    "longitude": -115.172155556,
+    "latitude": 36.090611111,
+    "utm_x": 664559.232,
+    "utm_y": 3995545.151,
+    "terrain_z_m": null,
+    "point_role": "published landmark identity anchor; not parcel centroid or final model origin",
+    "state": "SOURCE-CONFIRMED"
+  },
+  "site_components": [
+    {"id":"pyramid","type":"hotel_casino_primary_structure","state":"SOURCE-CONFIRMED"},
+    {"id":"sphinx_main_entrance","type":"themed_porte_cochere","state":"SOURCE-CONFIRMED"},
+    {"id":"obelisk","type":"themed_monument","state":"SOURCE-CONFIRMED"},
+    {"id":"east_tower","type":"hotel_tower","state":"SOURCE-CONFIRMED"},
+    {"id":"west_tower","type":"hotel_tower","state":"SOURCE-CONFIRMED"},
+    {"id":"west_parking_garage","type":"parking_structure","state":"SOURCE-CONFIRMED"},
+    {"id":"oasis_pool","type":"pool_complex","state":"SOURCE-CONFIRMED"},
+    {"id":"north_bus_plaza","type":"transit_loading_area","state":"SOURCE-CONFIRMED"},
+    {"id":"mandalay_place_connection","type":"pedestrian_retail_connection","state":"SOURCE-CONFIRMED"},
+    {"id":"excalibur_walkway","type":"pedestrian_connection","state":"SOURCE-CONFIRMED"}
+  ],
+  "road_access": [
+    {"name":"South Las Vegas Boulevard","relationship":"primary frontage and main entrance","state":"SOURCE-CONFIRMED"},
+    {"name":"Luxor Drive","relationship":"internal west parking and service circulation","state":"SOURCE-CONFIRMED"},
+    {"name":"Reno Avenue","relationship":"north/east site edge and north entrance access","state":"SOURCE-CONFIRMED"},
+    {"name":"Mandalay Bay Road","relationship":"south site edge and neighboring campus access","state":"SOURCE-CONFIRMED"},
+    {"name":"Frank Sinatra Drive","relationship":"western campus circulation","state":"SOURCE-CONFIRMED"}
+  ],
+  "architecture": {
+    "primary_form": "black-glass pyramid",
+    "pyramid_floors": "30 floors indicated by official property-map elevator ranges",
+    "tower_names": ["East Tower", "West Tower"],
+    "known_unique_features": ["Sphinx entrance", "obelisk", "pyramid apex beam", "inclined pyramid elevators"],
+    "exterior_material": "black glass panels",
+    "state": "PARTIALLY_SOURCE_CONFIRMED",
+    "not_resolved": ["exact facade dimensions", "roof/edge geometry", "tower footprints", "tower heights", "material PBR values"]
+  },
+  "parcel": {"apn":null,"polygon":null,"state":"UNRESOLVED","required_source":"Clark County GISMO Assessor parcel polygon"},
+  "building_footprints": {"state":"UNRESOLVED","required":["pyramid polygon","east tower polygon","west tower polygon","parking structure polygons","Sphinx/porte-cochere footprint"]},
+  "terrain": {"elevation_m":null,"state":"UNRESOLVED","required_source":"USGS 3DEP sample at approved model origins"},
+  "sources": [
+    {"id":"luxor_official_contact","type":"official_property","url":"https://luxor.mgmresorts.com/en/contact-us.html","supports":["identity","address","I-15 and airport approach"]},
+    {"id":"luxor_property_map_2017","type":"published_property_map","url":"https://res.klook.com/image/upload/v1500974638/US/Las%20Vegas/Luxor_Hotel_Property_Map.pdf","supports":["site components","entrances","roads","walkways","tower names","pyramid floor ranges"]},
+    {"id":"clark_county_gismo","type":"authoritative_gis_registry","url":"https://www.clarkcountynv.gov/government/departments/geographic_info_systems/","supports":["required parcel source registry"]}
+  ],
+  "gates": {"LOCATION_GATE":"PASS","PARCEL_GATE":"BLOCKED","BUILDING_GATE":"BLOCKED","IDENTITY_GATE":"PASS","ARCHITECTURE_GATE":"PARTIAL_PASS","CONTEXT_GATE":"PASS","SOURCE_GATE":"PASS"},
+  "release": {"semantic_site_graph":true,"road_relationship_graph":true,"final_sprite":false,"final_3d_asset":false,"parcel_aligned_placement":false},
+  "generation_status": "evidence_advanced_visual_blocked"
+}
