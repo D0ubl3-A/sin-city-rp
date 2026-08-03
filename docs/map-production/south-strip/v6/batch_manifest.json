@@ -1,0 +1,12 @@
+{
+  "schema": "sin-city-section-batch-v1",
+  "generated_at": "2026-08-03T09:49:52.911191+00:00",
+  "batch_id": "south-strip-remaining-v6",
+  "sections": ["SS-01D-MANDALAY-BAY", "SS-01E-MGM-GRAND", "SS-01F-TROPICANA-REDEVELOPMENT"],
+  "result": "PARTIAL_PASS",
+  "released": ["identity records", "address records", "context graphs", "partial architecture descriptors", "source registry"],
+  "blocked": ["all final sprites", "all final 3D exteriors", "parcel-aligned placement", "terrain-conforming origins"],
+  "south_strip_evidence_advanced": {"completed": 6, "total": 6, "percent": 100.0},
+  "south_strip_final_assets": {"completed": 0, "total": 6, "percent": 0.0},
+  "whole_map_completion": {"state": "UNMEASURABLE", "reason": "No repository-wide geographic section inventory and acceptance denominator is registered."}
+}
