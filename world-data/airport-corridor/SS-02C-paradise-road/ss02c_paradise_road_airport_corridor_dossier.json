@@ -1,0 +1,91 @@
+{
+  "schema": "sin-city-corridor-dossier-v1",
+  "section_id": "SS-02C-PARADISE-ROAD-AIRPORT-CORRIDOR",
+  "identity": {
+    "name": "Paradise Road airport corridor",
+    "jurisdiction_context": "Unincorporated Clark County / Paradise planning context",
+    "state": "PARTIALLY_SOURCE_CONFIRMED",
+    "note": "The section is treated as a transportation corridor, not as one parcel or one building."
+  },
+  "coordinates": {
+    "corridor_centerline": null,
+    "section_polygon": null,
+    "utm_geometry": null,
+    "state": "UNRESOLVED",
+    "reason": "No authoritative road-centerline feature response was captured and preserved during this cycle."
+  },
+  "parcels": {
+    "parcel_ids": [],
+    "parcel_polygons": [],
+    "state": "UNRESOLVED",
+    "reason": "A corridor crosses multiple parcels and public rights-of-way; no complete intersecting parcel set was captured."
+  },
+  "roads": {
+    "confirmed": ["Paradise Road", "Tropicana Avenue", "University Center Drive"],
+    "unresolved_geometry": ["centerlines", "lane counts", "medians", "curbs", "turn pockets", "sidewalks"],
+    "state": "CONTEXT_CONFIRMED_GEOMETRY_BLOCKED"
+  },
+  "terrain": {
+    "samples": [],
+    "state": "UNRESOLVED",
+    "required_source": "USGS 3DEP samples at approved corridor vertices"
+  },
+  "buildings": {
+    "footprints": [],
+    "identities": [],
+    "state": "UNRESOLVED",
+    "reason": "No authoritative corridor-wide building-footprint and identity join was captured."
+  },
+  "architecture": {
+    "state": "BLOCKED",
+    "reason": "Architecture is asset-specific and cannot be assigned to a corridor without verified building identities and footprints."
+  },
+  "context": {
+    "airport_transit": "SOURCE-CONFIRMED",
+    "airport_airspace_layers": "SOURCE-CONFIRMED",
+    "airport_height_layers": "SOURCE-CONFIRMED",
+    "source_refs": ["rtc_airport_routes", "rtc_airport_bus_guide", "rtc_current_detours", "clark_airzone", "clark_airportheight"]
+  },
+  "semantic_edges": [
+    {"subject":"corridor:paradise_road_airport","predicate":"contains","object":"road:paradise_road","source_ref":"rtc_airport_bus_guide"},
+    {"subject":"transit:route_108","predicate":"named_for_corridor","object":"road:paradise_road","source_ref":"rtc_airport_bus_guide"},
+    {"subject":"transit:route_108","predicate":"serves","object":"airport:harry_reid_terminal_1","source_ref":"rtc_airport_routes"},
+    {"subject":"transit:route_109","predicate":"serves","object":"airport:harry_reid_terminal_1","source_ref":"rtc_airport_routes"},
+    {"subject":"transit:centennial_express","predicate":"serves","object":"airport:harry_reid_terminal_1","source_ref":"rtc_airport_routes"},
+    {"subject":"transit:centennial_express","predicate":"serves","object":"airport:harry_reid_terminal_3","source_ref":"rtc_airport_routes"},
+    {"subject":"road:paradise_road","predicate":"crosses","object":"road:tropicana_avenue","source_ref":"rtc_current_detours"},
+    {"subject":"road:paradise_road","predicate":"connects_toward","object":"road:university_center_drive","source_ref":"rtc_current_detours"},
+    {"subject":"road:paradise_road","predicate":"participates_in_access_to","object":"airport:harry_reid_terminal_1","source_ref":"rtc_current_detours"},
+    {"subject":"corridor:paradise_road_airport","predicate":"intersects_regulatory_context","object":"layer:airport_airspace","source_ref":"clark_airzone"},
+    {"subject":"corridor:paradise_road_airport","predicate":"intersects_regulatory_context","object":"layer:airport_height","source_ref":"clark_airportheight"}
+  ],
+  "sources": [
+    {"id":"rtc_airport_routes","authority":"Regional Transportation Commission of Southern Nevada","url":"https://www.rtcsnv.com/ways-to-travel/transit-services/airport-transit-routes/"},
+    {"id":"rtc_airport_bus_guide","authority":"Regional Transportation Commission of Southern Nevada","url":"https://www.rtcsnv.com/news/affordable-and-convenient-how-to-ride-the-bus-from-the-airport/"},
+    {"id":"rtc_current_detours","authority":"Regional Transportation Commission of Southern Nevada","url":"https://www.rtcsnv.com/ways-to-travel/alerts-detours/"},
+    {"id":"clark_airzone","authority":"Clark County Department of Aviation","url":"https://maps.clarkcountynv.gov/arcgis/rest/services/GISMO/AirZone/MapServer"},
+    {"id":"clark_airportheight","authority":"Clark County GIS","url":"https://maps.clarkcountynv.gov/arcgis/rest/services/GISMO/airportheight/MapServer"},
+    {"id":"clark_parcel_index","authority":"Clark County Assessor","url":"https://www.clarkcountynv.gov/government/assessor/tax-district-maps"}
+  ],
+  "gates": {
+    "IDENTITY_GATE": "PARTIAL_PASS",
+    "SOURCE_GATE": "PASS",
+    "SEMANTIC_EDGE_GATE": "PASS",
+    "ROAD_CONTEXT_GATE": "PASS",
+    "COORDINATE_GATE": "BLOCKED",
+    "PARCEL_GATE": "BLOCKED",
+    "ROAD_GEOMETRY_GATE": "BLOCKED",
+    "TERRAIN_GATE": "BLOCKED",
+    "BUILDING_GATE": "BLOCKED",
+    "ARCHITECTURE_GATE": "BLOCKED"
+  },
+  "release": {
+    "corridor_identity_record": true,
+    "transit_context_graph": true,
+    "regulatory_context_graph": true,
+    "road_geometry": false,
+    "terrain_mesh": false,
+    "building_assets": false,
+    "final_visual_section": false
+  }
+}
