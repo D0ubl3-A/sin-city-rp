@@ -1,0 +1,16 @@
+{
+  "section_id": "SS-01F-TMOBILE-ARENA",
+  "edges": [
+    {"subject": "property:tmobile_arena", "predicate": "addressed_on", "object": "road:south_las_vegas_boulevard", "source_ref": "official_info"},
+    {"subject": "property:tmobile_arena", "predicate": "served_by_reserved_parking", "object": "garage:park_mgm", "source_ref": "official_parking"},
+    {"subject": "property:tmobile_arena", "predicate": "served_by_reserved_parking", "object": "garage:new_york_new_york", "source_ref": "official_parking"},
+    {"subject": "property:tmobile_arena", "predicate": "served_by_reserved_parking", "object": "garage:aria", "source_ref": "official_parking"},
+    {"subject": "property:tmobile_arena", "predicate": "contains", "object": "component:arena_bowl", "source_ref": "official_info"},
+    {"subject": "property:tmobile_arena", "predicate": "contains", "object": "component:toshiba_plaza", "source_ref": "official_info"},
+    {"subject": "property:tmobile_arena", "predicate": "contains", "object": "component:loading_dock", "source_ref": "official_info"},
+    {"subject": "property:tmobile_arena", "predicate": "contains", "object": "component:premium_balconies", "source_ref": "official_info"},
+    {"subject": "component:toshiba_plaza", "predicate": "connects_to", "object": "district:the_park", "source_ref": "official_neighborhood"},
+    {"subject": "component:toshiba_plaza", "predicate": "connects_to", "object": "property:new_york_new_york", "source_ref": "official_neighborhood"},
+    {"subject": "component:toshiba_plaza", "predicate": "connects_to", "object": "property:park_mgm", "source_ref": "official_neighborhood"}
+  ]
+}

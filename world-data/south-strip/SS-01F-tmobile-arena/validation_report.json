@@ -1,0 +1,11 @@
+{
+  "run_at": "2026-08-03T12:00:46.291874+00:00",
+  "section_id": "SS-01F-TMOBILE-ARENA",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {"passed": 9, "total": 9},
+  "errors": [],
+  "warnings": [],
+  "released": ["identity_record", "semantic_site_graph", "road_context_graph", "partial_architecture_record"],
+  "blocked": ["surveyed coordinates", "UTM origin", "APN", "parcel polygon", "building footprints", "terrain elevations", "final sprite", "final 3D asset", "parcel-aligned placement"],
+  "next_section": "SS-02A-WELCOME-TO-FABULOUS-LAS-VEGAS-SIGN"
+}
