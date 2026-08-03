@@ -1,0 +1,32 @@
+{
+  "cycle_id": "SS-01B-EXCALIBUR",
+  "pipeline_result": "PARTIAL_PASS",
+  "coordinates_valid": 9,
+  "coordinate_errors": 0,
+  "warnings": 0,
+  "released_outputs": [
+    "property identity record",
+    "road access graph",
+    "transit relationship",
+    "named site components"
+  ],
+  "blocked_outputs": [
+    "final sprite",
+    "final 3D model",
+    "parcel-aligned placement",
+    "tower massing"
+  ],
+  "visual_asset_generation_permitted": false,
+  "semantic_graph_generation_permitted": true,
+  "tests_passed": 8,
+  "tests_total": 8,
+  "progress": {
+    "south_strip_control_anchors_complete": 3,
+    "landmark_sites_evidence_advanced": 2,
+    "landmark_sites_total": 6,
+    "landmark_sites_final_complete": 0,
+    "south_strip_evidence_advancement_percent": 33.33,
+    "whole_map_percent": null
+  },
+  "next_section": "Luxor Hotel & Casino"
+}
