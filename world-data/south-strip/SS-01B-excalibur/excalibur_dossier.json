@@ -1,0 +1,48 @@
+{
+  "location_id": "ss01_lm_excalibur",
+  "section_id": "SS-01B-EXCALIBUR",
+  "fact_policy": "No inferred facts promoted to confirmed.",
+  "official_identity": {
+    "name": "Excalibur Hotel & Casino",
+    "address": "3850 S Las Vegas Blvd, Las Vegas, NV 89109",
+    "state": "SOURCE-CONFIRMED"
+  },
+  "confirmed_relationships": {
+    "road_access": [
+      {"road": "Reno Drive", "function": "parking_garage_access", "state": "SOURCE-CONFIRMED"},
+      {"road": "South Las Vegas Boulevard", "function": "primary_frontage", "state": "SOURCE-CONFIRMED"},
+      {"road": "Tropicana Avenue", "function": "regional_approach", "state": "SOURCE-CONFIRMED"},
+      {"road": "Interstate 15", "function": "regional_approach_via_exits_36_37", "state": "SOURCE-CONFIRMED"}
+    ],
+    "transit": [{"name": "Mandalay Bay Tram", "state": "SOURCE-CONFIRMED"}]
+  },
+  "confirmed_components": [
+    "Royal Tower",
+    "Resort Tower",
+    "casino/central castle complex",
+    "parking garage and elevated walkways",
+    "pool complex",
+    "Tournament of Kings arena",
+    "Royal Tower rideshare entrance"
+  ],
+  "unknown_facts": [
+    "APN",
+    "parcel polygon",
+    "authoritative exterior footprint polygons",
+    "tower story counts",
+    "roof dimensions",
+    "facade dimensions",
+    "terrain elevation at model origin",
+    "final model origin"
+  ],
+  "gates": {
+    "LOCATION_GATE": "PARTIAL_PASS",
+    "PARCEL_GATE": "PENDING",
+    "BUILDING_GATE": "PARTIAL_PASS",
+    "IDENTITY_GATE": "PASS",
+    "ARCHITECTURE_GATE": "PARTIAL_PASS",
+    "CONTEXT_GATE": "PASS",
+    "SOURCE_GATE": "PASS"
+  },
+  "generation_status": "semantic_site_graph_released_visual_asset_blocked"
+}
