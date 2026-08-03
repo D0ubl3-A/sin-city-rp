@@ -1,0 +1,91 @@
+{
+  "schema": "sin-city-location-dossier-v1",
+  "section_id": "SS-02A-WELCOME-SIGN",
+  "identity": {
+    "name": "Welcome to Fabulous Las Vegas Sign",
+    "category": "historic_roadside_landmark",
+    "address": "5100 Las Vegas Blvd, Las Vegas, NV 89119",
+    "designer": "Betty Willis",
+    "created_year": 1959
+  },
+  "coordinates": {
+    "latitude": null,
+    "longitude": null,
+    "utm": null,
+    "state": "UNRESOLVED",
+    "note": "No surveyed or authoritative machine-readable point was captured; the address is not promoted to a model origin."
+  },
+  "parcel": {
+    "apn": null,
+    "polygon": null,
+    "state": "UNRESOLVED",
+    "required_source_ref": "clark_gis"
+  },
+  "terrain": {
+    "elevation_m": null,
+    "state": "UNRESOLVED"
+  },
+  "buildings": {
+    "state": "NOT_APPLICABLE_TO_PRIMARY_OBJECT",
+    "note": "The primary object is a roadside sign; visitor hardscape and accessory footprints remain unresolved."
+  },
+  "architecture": {
+    "height_ft": 25,
+    "style": "Googie",
+    "perimeter_lights": 89,
+    "state": "PARTIAL_PASS",
+    "unresolved": [
+      "sign face dimensions",
+      "support-post dimensions",
+      "star geometry",
+      "cabinet depth",
+      "foundation geometry",
+      "material/PBR specification"
+    ]
+  },
+  "context": {
+    "relative_location": "Las Vegas Boulevard South, south of Russell Road",
+    "jurisdiction": "unincorporated Clark County",
+    "historic_registry": "National Register of Historic Places, listed 2009",
+    "state": "PASS"
+  },
+  "semantic_edges": [
+    {"subject":"landmark:welcome_sign","predicate":"located_on","object":"road:las_vegas_boulevard_south","source_ref":"county_landmark"},
+    {"subject":"landmark:welcome_sign","predicate":"located_south_of","object":"road:russell_road","source_ref":"county_landmark"},
+    {"subject":"landmark:welcome_sign","predicate":"located_in","object":"jurisdiction:unincorporated_clark_county","source_ref":"county_landmark"},
+    {"subject":"landmark:welcome_sign","predicate":"designed_by","object":"person:betty_willis","source_ref":"county_history"},
+    {"subject":"landmark:welcome_sign","predicate":"has_style","object":"style:googie","source_ref":"county_landmark"},
+    {"subject":"landmark:welcome_sign","predicate":"listed_in","object":"registry:national_register_of_historic_places","source_ref":"county_landmark"},
+    {"subject":"landmark:welcome_sign","predicate":"contains","object":"component:double_faced_sign_body","source_ref":"county_landmark"},
+    {"subject":"landmark:welcome_sign","predicate":"contains","object":"component:perimeter_lighting_system","source_ref":"county_landmark"}
+  ],
+  "sources": [
+    {"id":"county_history","url":"https://www.clarkcountynv.gov/government/departments/parks___recreation/cultural_division/america250-signal-boxes/las-vegas-sign"},
+    {"id":"county_landmark","url":"https://www.clarkcountynv.gov/news/060625-welcomesignpride"},
+    {"id":"county_address","url":"https://www.clarkcountynv.gov/calendar/county-commissioners-district-d/061726-welcome-sign-juneteenth"},
+    {"id":"nps_nrhp","url":"https://npgallery.nps.gov/nrhp/SearchResults/"},
+    {"id":"clark_gis","url":"https://www.clarkcountynv.gov/government/elected_officials/county_recorder/gis-infomapper"}
+  ],
+  "gates": {
+    "IDENTITY_GATE": "PASS",
+    "SOURCE_GATE": "PASS",
+    "SEMANTIC_EDGE_GATE": "PASS",
+    "ROAD_CONTEXT_GATE": "PASS",
+    "HISTORIC_CONTEXT_GATE": "PASS",
+    "LOCATION_GATE": "BLOCKED",
+    "PARCEL_GATE": "BLOCKED",
+    "TERRAIN_GATE": "BLOCKED",
+    "ARCHITECTURE_GATE": "PARTIAL_PASS",
+    "VISUAL_ASSET_GATE": "BLOCKED"
+  },
+  "release": {
+    "identity_record": true,
+    "road_context_graph": true,
+    "semantic_site_graph": true,
+    "historic_context_record": true,
+    "final_sprite": false,
+    "final_3d_asset": false,
+    "terrain_conforming_placement": false,
+    "parcel_aligned_placement": false
+  }
+}
