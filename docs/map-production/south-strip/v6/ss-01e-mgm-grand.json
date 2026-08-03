@@ -1,0 +1,14 @@
+{
+  "section_id": "SS-01E-MGM-GRAND",
+  "identity": {"name": "MGM Grand Las Vegas", "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109", "state": "SOURCE_CONFIRMED"},
+  "coordinates": {"longitude": null, "latitude": null, "utm_x": null, "utm_y": null, "terrain_z_m": null, "state": "UNRESOLVED"},
+  "context": {"verified": ["South Las Vegas Boulevard frontage", "Tropicana Avenue approach", "MGM Grand Drive porte-cochere access", "MGM Grand Garden Arena", "Grand Pool Complex"], "architecture": ["large green-glass hotel/casino complex"], "state": "PARTIAL_SOURCE_CONFIRMED"},
+  "parcel": {"apn": null, "polygon": null, "state": "UNRESOLVED"},
+  "buildings": {"footprints": null, "state": "UNRESOLVED"},
+  "terrain": {"elevation_m": null, "state": "UNRESOLVED"},
+  "sources": [
+    {"url": "https://mgmgrand.mgmresorts.com/en/contact-us.html", "type": "official_property"},
+    {"url": "https://www.clarkcountynv.gov/government/departments/geographic_info_systems/services/data-for-purchase", "type": "authoritative_registry"}
+  ],
+  "gates": {"IDENTITY": "PASS", "CONTEXT": "PASS", "ARCHITECTURE": "PARTIAL_PASS", "COORDINATES": "BLOCKED", "PARCEL": "BLOCKED", "BUILDINGS": "BLOCKED", "TERRAIN": "BLOCKED", "FINAL_VISUAL": "BLOCKED"}
+}
