@@ -1,0 +1,9 @@
+{
+  "section_id": "SS-02A-WELCOME-SIGN",
+  "tasks": [
+    {"priority":1,"gate":"LOCATION_GATE","task":"Capture an authoritative surveyed or agency-published point.","status":"BLOCKED_EXTERNAL_EVIDENCE"},
+    {"priority":2,"gate":"PARCEL_GATE","task":"Archive the Clark County parcel or right-of-way response.","status":"BLOCKED_EXTERNAL_EVIDENCE"},
+    {"priority":3,"gate":"ARCHITECTURE_GATE","task":"Capture licensed dimensional drawings or field survey geometry.","status":"BLOCKED_LICENSED_OR_FIELD_EVIDENCE"},
+    {"priority":4,"gate":"TERRAIN_GATE","task":"Sample USGS 3DEP after an approved origin exists.","status":"WAITING_ON_LOCATION_GATE"}
+  ]
+}

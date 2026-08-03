@@ -1,0 +1,26 @@
+{
+  "run_at": "2026-08-03T13:06:16.996001+00:00",
+  "section_id": "SS-02A-WELCOME-SIGN",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {
+    "passed": 10,
+    "total": 10,
+    "results": [
+      {"name":"all_facts_sourced","passed":true},
+      {"name":"all_edges_sourced","passed":true},
+      {"name":"coordinates_not_fabricated","passed":true},
+      {"name":"parcel_not_fabricated","passed":true},
+      {"name":"terrain_not_fabricated","passed":true},
+      {"name":"building_gate_not_applicable","passed":true},
+      {"name":"visuals_blocked","passed":true},
+      {"name":"semantic_edges_present","passed":true},
+      {"name":"architecture_partial_only","passed":true},
+      {"name":"next_section_registered","passed":true}
+    ]
+  },
+  "errors": [],
+  "warnings": [],
+  "released": ["identity_record","road_context_graph","semantic_site_graph","historic_context_record","partial_architecture_record"],
+  "blocked": ["surveyed coordinates","UTM origin","APN","parcel polygon","visitor hardscape geometry","terrain elevation","exact sign geometry","final sprite","final 3D asset","parcel-aligned placement"],
+  "next_section": "SS-02B-HARRY-REID-AIRPORT-WEST-EDGE"
+}
