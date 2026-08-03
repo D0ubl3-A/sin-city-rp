@@ -1,0 +1,9 @@
+{
+  "section_id":"SS-01E-ALLEGIANT-STADIUM",
+  "tasks":[
+    {"priority":1,"gate":"COORDINATE_GATE","task":"Capture an authoritative stadium model origin tied to parcel or surveyed footprint."},
+    {"priority":2,"gate":"PARCEL_GATE","task":"Capture Clark County APN and parcel polygon."},
+    {"priority":3,"gate":"BUILDING_GATE","task":"Capture authoritative stadium and accessory footprint polygons."},
+    {"priority":4,"gate":"TERRAIN_GATE","task":"Sample USGS 3DEP at approved origins."}
+  ]
+}

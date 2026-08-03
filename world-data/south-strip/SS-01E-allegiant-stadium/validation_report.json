@@ -1,0 +1,21 @@
+{
+  "run_at":"2026-08-03T11:01:56.615832+00:00",
+  "section_id":"SS-01E-ALLEGIANT-STADIUM",
+  "pipeline_result":"PARTIAL_PASS",
+  "tests":{"passed":9,"total":9,"results":[
+    {"name":"identity_has_source","passed":true},
+    {"name":"all_roads_have_sources","passed":true},
+    {"name":"all_components_have_sources","passed":true},
+    {"name":"semantic_edges_exist","passed":true},
+    {"name":"parcel_not_fabricated","passed":true},
+    {"name":"coordinate_not_fabricated","passed":true},
+    {"name":"terrain_not_fabricated","passed":true},
+    {"name":"visuals_blocked","passed":true},
+    {"name":"source_refs_resolve","passed":true}
+  ]},
+  "errors":[],
+  "warnings":[],
+  "released":["identity_record","semantic_site_graph","road_relationship_graph","architecture_dossier_partial"],
+  "blocked":["authoritative model origin","Clark County APN and parcel polygon","authoritative exterior footprint","USGS terrain sample","final sprite","final 3D asset","parcel-aligned placement"],
+  "next_section":"SS-01F-T-MOBILE-ARENA"
+}

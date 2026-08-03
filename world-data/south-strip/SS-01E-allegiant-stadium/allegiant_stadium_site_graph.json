@@ -1,0 +1,30 @@
+{
+  "schema":"sin-city-location-graph-v1",
+  "section_id":"SS-01E-ALLEGIANT-STADIUM",
+  "nodes":[
+    {"id":"property:allegiant_stadium","type":"property"},
+    {"id":"component:stadium_bowl","type":"enclosed_climate_controlled_stadium"},
+    {"id":"component:retractable_natural_turf_tray","type":"field_system"},
+    {"id":"component:operable_walls","type":"facade_system"},
+    {"id":"component:al_davis_memorial_torch","type":"monument"},
+    {"id":"component:video_boards","type":"display_system"},
+    {"id":"component:parking_lots","type":"parking_network"},
+    {"id":"component:gate_entrances","type":"pedestrian_entry_network"}
+  ],
+  "edges":[
+    {"subject":"property:allegiant_stadium","predicate":"fronted_by","object":"road:al_davis_way","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"adjacent_to","object":"road:interstate_15","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"accessed_from","object":"road:russell_road","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"accessed_from","object":"road:tropicana_avenue","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"pedestrian_connected_by","object":"road:hacienda_bridge","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"rideshare_access_via","object":"road:dean_martin_drive","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"taxi_shuttle_access_via","object":"intersection:diablo_procyon","source_ref":"stadium_directions"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:stadium_bowl","source_ref":"stadium_about"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:retractable_natural_turf_tray","source_ref":"stadium_az"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:operable_walls","source_ref":"stadium_az"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:al_davis_memorial_torch","source_ref":"stadium_about"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:video_boards","source_ref":"stadium_about"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:parking_lots","source_ref":"stadium_maps"},
+    {"subject":"property:allegiant_stadium","predicate":"contains","object":"component:gate_entrances","source_ref":"stadium_maps"}
+  ]
+}
