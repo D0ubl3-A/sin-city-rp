@@ -1,0 +1,40 @@
+{
+  "run_at": "2026-08-03T07:00:09.050404+00:00",
+  "section_id": "SS-01D-MANDALAY-BAY",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {
+    "passed": 10,
+    "total": 10,
+    "results": [
+      {"name":"coordinate_range","passed":true},
+      {"name":"utm_zone_11n","passed":true},
+      {"name":"identity_passed","passed":true},
+      {"name":"parcel_not_fabricated","passed":true},
+      {"name":"terrain_not_fabricated","passed":true},
+      {"name":"visual_assets_blocked","passed":true},
+      {"name":"semantic_graph_released","passed":true},
+      {"name":"source_registry_complete","passed":true},
+      {"name":"campus_components_resolved","passed":true},
+      {"name":"road_relationships_resolved","passed":true}
+    ]
+  },
+  "errors": [],
+  "warnings": [],
+  "released": [
+    "semantic_site_graph",
+    "road_relationship_graph",
+    "official_identity_and_address",
+    "source_backed_campus_component_inventory",
+    "partial_architecture_dossier"
+  ],
+  "blocked": [
+    "Clark County APN",
+    "parcel polygon",
+    "authoritative building footprints",
+    "USGS terrain sample",
+    "final sprite",
+    "final 3D asset",
+    "parcel-aligned model origin"
+  ],
+  "next_section": "SS-01E-ALLEGIANT-STADIUM"
+}

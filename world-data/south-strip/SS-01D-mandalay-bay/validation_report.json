@@ -1,0 +1,40 @@
+{
+  "schema": "sin-city-validation-report-v1",
+  "section_id": "SS-01D-MANDALAY-BAY",
+  "pipeline_result": "PARTIAL_PASS",
+  "checks": [
+    {"name": "official_identity_has_source_refs", "passed": true},
+    {"name": "every_confirmed_fact_has_resolvable_source_refs", "passed": true},
+    {"name": "semantic_graph_has_subject_predicate_object_edges", "passed": true},
+    {"name": "parcel_not_fabricated", "passed": true},
+    {"name": "coordinates_not_fabricated", "passed": true},
+    {"name": "terrain_not_fabricated", "passed": true},
+    {"name": "final_visual_assets_remain_blocked", "passed": true},
+    {"name": "authoritative_parcel_layer_registered", "passed": true},
+    {"name": "official_road_context_registered", "passed": true}
+  ],
+  "tests": {"passed": 9, "total": 9},
+  "errors": [],
+  "warnings": [],
+  "released": [
+    "official identity and address record",
+    "source-audited semantic site graph",
+    "official approach-road relationship graph",
+    "partial architecture dossier"
+  ],
+  "blocked": [
+    "authoritative latitude/longitude model origin",
+    "Clark County APN and parcel polygon",
+    "authoritative building footprints",
+    "USGS terrain elevations",
+    "final exterior sprite",
+    "final 3D asset",
+    "parcel-aligned placement"
+  ],
+  "reproducibility": {
+    "deterministic_input": true,
+    "volatile_runtime_fields": [],
+    "status": "PASS"
+  },
+  "next_section": "SS-01E-ALLEGIANT-STADIUM"
+}

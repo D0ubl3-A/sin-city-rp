@@ -1,0 +1,92 @@
+{
+  "schema": "sin-city-location-dossier-v2",
+  "section_id": "SS-01D-MANDALAY-BAY",
+  "location_id": "ss01_lm_mandalay_bay",
+  "official_identity": {
+    "name": {"value": "Mandalay Bay Resort & Casino", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    "operator": {"value": "MGM Resorts International", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    "address": {"value": "3950 S Las Vegas Blvd, Las Vegas, NV 89119", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]}
+  },
+  "coordinates": {
+    "latitude": null,
+    "longitude": null,
+    "terrain_z_m": null,
+    "state": "UNRESOLVED",
+    "reason": "No authoritative coordinate or footprint-derived model origin was captured in this cycle."
+  },
+  "confirmed_facts": [
+    {"subject": "property:mandalay_bay", "predicate": "occupies_reported_area_acres", "object": 120, "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "contains", "object": "component:beach_pool_complex", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "component:beach_pool_complex", "predicate": "reported_area_acres", "object": 11, "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "component:beach_pool_complex", "predicate": "includes", "object": "feature:real_sand", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "component:beach_pool_complex", "predicate": "includes", "object": "feature:wave_pool", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "contains", "object": "component:michelob_ultra_arena", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "component:michelob_ultra_arena", "predicate": "reported_seat_capacity", "object": 12000, "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "contains", "object": "component:convention_center", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "component:convention_center", "predicate": "reported_area_sq_ft", "object": 2100000, "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "contains", "object": "component:shark_reef_aquarium", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "contains", "object": "component:house_of_blues", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "contains", "object": "component:shoppes_at_mandalay_place", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "accessed_from", "object": "road:south_las_vegas_boulevard", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "airport_approach_uses", "object": "road:east_diablo_avenue", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "i15_northbound_approach_uses", "object": "road:frank_sinatra_drive", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]},
+    {"subject": "property:mandalay_bay", "predicate": "i15_northbound_approach_uses", "object": "road:russell_road", "state": "SOURCE-CONFIRMED", "source_refs": ["mb_official_contact"]}
+  ],
+  "parcel": {
+    "apn": null,
+    "polygon": null,
+    "state": "UNRESOLVED",
+    "required_source_ref": "clark_county_parcels"
+  },
+  "building_footprints": {
+    "state": "UNRESOLVED",
+    "required": ["main hotel tower", "casino podium", "convention center", "arena", "parking structures", "pool-complex boundary"]
+  },
+  "architecture": {
+    "state": "PARTIAL_PASS",
+    "confirmed": [
+      {"fact": "gold-colored curved exterior tower appearance", "source_refs": ["mb_official_contact"]},
+      {"fact": "36 floors stated in official page image description", "source_refs": ["mb_official_contact"]}
+    ],
+    "unresolved": ["tower footprint", "tower height", "facade dimensions", "roof geometry", "material PBR values"]
+  },
+  "terrain": {
+    "state": "UNRESOLVED",
+    "elevation_m": null,
+    "required_source": "USGS 3DEP at approved footprint-derived origins"
+  },
+  "sources": [
+    {
+      "id": "mb_official_contact",
+      "publisher": "MGM Resorts International",
+      "title": "Mandalay Bay Guest Services and Directions",
+      "url": "https://mandalaybay.mgmresorts.com/en/contact-us.html",
+      "authority": "official_property"
+    },
+    {
+      "id": "clark_county_parcels",
+      "publisher": "Clark County, Nevada GISMO",
+      "title": "AssessorMapv2 Parcels Feature Layer",
+      "url": "https://maps.clarkcountynv.gov/arcgis/rest/services/GISMO/AssessorMapv2/FeatureServer/1",
+      "authority": "authoritative_gis"
+    }
+  ],
+  "gates": {
+    "LOCATION_GATE": "BLOCKED",
+    "PARCEL_GATE": "BLOCKED",
+    "BUILDING_GATE": "BLOCKED",
+    "IDENTITY_GATE": "PASS",
+    "ARCHITECTURE_GATE": "PARTIAL_PASS",
+    "CONTEXT_GATE": "PASS",
+    "SOURCE_GATE": "PASS"
+  },
+  "release": {
+    "identity_record": true,
+    "semantic_site_graph": true,
+    "road_relationship_graph": true,
+    "final_sprite": false,
+    "final_3d_asset": false,
+    "parcel_aligned_placement": false
+  },
+  "generation_status": "evidence_advanced_visual_blocked"
+}

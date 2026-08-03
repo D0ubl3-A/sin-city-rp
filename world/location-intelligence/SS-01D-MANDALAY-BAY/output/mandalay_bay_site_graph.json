@@ -1,0 +1,36 @@
+{
+  "schema": "sin-city-location-graph-v1",
+  "section_id": "SS-01D-MANDALAY-BAY",
+  "nodes": [
+    {"id":"property:mandalay_bay","type":"property","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:mandalay_bay_hotel_casino","type":"primary_hotel_casino_structure","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:mandalay_bay_convention_center","type":"convention_center","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:mandalay_bay_beach","type":"pool_and_beach_complex","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:shark_reef_aquarium","type":"aquarium_attraction","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:mandalay_place","type":"enclosed_retail_pedestrian_connection","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:delano_las_vegas","type":"connected_hotel_tower","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:mandalay_bay_events_center","type":"arena_events_facility","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:parking_and_valet_system","type":"parking_and_arrival_system","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"component:south_strip_tram_station","type":"tram_connection","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"road:south_las_vegas_boulevard","type":"road","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"road:mandalay_bay_road","type":"road","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"road:frank_sinatra_drive","type":"road","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"road:interstate_15","type":"road","fact_state":"SOURCE-CONFIRMED"}
+  ],
+  "edges": [
+    {"from":"property:mandalay_bay","to":"component:mandalay_bay_hotel_casino","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:mandalay_bay_convention_center","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:mandalay_bay_beach","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:shark_reef_aquarium","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:mandalay_place","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:delano_las_vegas","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:mandalay_bay_events_center","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:parking_and_valet_system","type":"contains"},
+    {"from":"property:mandalay_bay","to":"component:south_strip_tram_station","type":"contains"},
+    {"from":"property:mandalay_bay","to":"road:south_las_vegas_boulevard","type":"accessed_by","relationship":"primary public frontage and resort approach"},
+    {"from":"property:mandalay_bay","to":"road:mandalay_bay_road","type":"accessed_by","relationship":"north campus access and neighboring resort connection"},
+    {"from":"property:mandalay_bay","to":"road:frank_sinatra_drive","type":"accessed_by","relationship":"western service, parking, and convention access corridor"},
+    {"from":"property:mandalay_bay","to":"road:interstate_15","type":"accessed_by","relationship":"regional approach identified by official property directions"},
+    {"from":"property:mandalay_bay","to":"property:luxor","type":"connected_to","relationship":"Mandalay Place pedestrian connection and tram corridor","fact_state":"SOURCE-CONFIRMED"}
+  ]
+}
