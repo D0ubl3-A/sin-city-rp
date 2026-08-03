@@ -1,0 +1,9 @@
+{
+  "section_id": "SS-02E-MARYLAND-PARKWAY-TROPICANA-CAMPUS-EDGE",
+  "tasks": [
+    {"priority":1,"gate":"ROAD_GEOMETRY_GATE","task":"Capture authoritative Maryland Parkway, Tropicana Avenue, and Dorothy Avenue centerline/right-of-way feature responses with CRS metadata."},
+    {"priority":2,"gate":"PARCEL_GATE","task":"Intersect the approved section polygon with Clark County parcel and right-of-way datasets."},
+    {"priority":3,"gate":"FOOTPRINT_GATE","task":"Capture authoritative footprints for University Gateway, Tropicana Parking Garage, Graduate Arts Studios, and adjacent structures."},
+    {"priority":4,"gate":"TERRAIN_GATE","task":"Sample USGS 3DEP at approved section vertices and footprint-derived model origins."}
+  ]
+}
