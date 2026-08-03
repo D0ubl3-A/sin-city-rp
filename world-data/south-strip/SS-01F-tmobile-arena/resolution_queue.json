@@ -1,0 +1,9 @@
+{
+  "section_id": "SS-01F-TMOBILE-ARENA",
+  "tasks": [
+    {"priority": 1, "gate": "PARCEL_GATE", "task": "Capture and archive the Clark County parcel response for the arena site."},
+    {"priority": 2, "gate": "BUILDING_GATE", "task": "Capture authoritative arena, plaza, and accessory footprint geometry."},
+    {"priority": 3, "gate": "LOCATION_GATE", "task": "Derive model origins from approved footprints and preserve CRS transformation evidence."},
+    {"priority": 4, "gate": "TERRAIN_GATE", "task": "Sample USGS 3DEP at approved model origins."}
+  ]
+}
