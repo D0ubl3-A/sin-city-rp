@@ -1,0 +1,110 @@
+{
+  "schema": "sin-city-location-dossier-v1",
+  "section_id": "SS-01D-MANDALAY-BAY",
+  "location_id": "ss01_lm_mandalay_bay",
+  "identity": {
+    "name": "Mandalay Bay Resort and Casino",
+    "category": "integrated_resort_casino",
+    "operator": "MGM Resorts International",
+    "address": {
+      "street_number": "3950",
+      "street_name": "S Las Vegas Blvd",
+      "city": "Las Vegas",
+      "state": "NV",
+      "postal_code": "89119",
+      "fact_state": "SOURCE-CONFIRMED"
+    }
+  },
+  "coordinates": {
+    "crs": "EPSG:32611",
+    "longitude": -115.1715,
+    "latitude": 36.0883,
+    "utm_x": 664623.078,
+    "utm_y": 3995289.881,
+    "terrain_z_m": null,
+    "point_role": "Published landmark identity anchor only; not a parcel centroid, survey monument, building centroid, or approved model origin.",
+    "fact_state": "SOURCE-CONFIRMED",
+    "precision_note": "Four-decimal source coordinate; footprint resolution required."
+  },
+  "site_components": [
+    {"id":"mandalay_bay_hotel_casino","type":"primary_hotel_casino_structure","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"mandalay_bay_convention_center","type":"convention_center","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"mandalay_bay_beach","type":"pool_and_beach_complex","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"shark_reef_aquarium","type":"aquarium_attraction","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"mandalay_place","type":"enclosed_retail_pedestrian_connection","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"delano_las_vegas","type":"connected_hotel_tower","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"mandalay_bay_events_center","type":"arena_events_facility","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"parking_and_valet_system","type":"parking_and_arrival_system","fact_state":"SOURCE-CONFIRMED"},
+    {"id":"south_strip_tram_station","type":"tram_connection","fact_state":"SOURCE-CONFIRMED"}
+  ],
+  "road_access": [
+    {"name":"South Las Vegas Boulevard","relationship":"primary public frontage and resort approach","fact_state":"SOURCE-CONFIRMED"},
+    {"name":"Mandalay Bay Road","relationship":"north campus access and neighboring resort connection","fact_state":"SOURCE-CONFIRMED"},
+    {"name":"Frank Sinatra Drive","relationship":"western service, parking, and convention access corridor","fact_state":"SOURCE-CONFIRMED"},
+    {"name":"Interstate 15","relationship":"regional approach identified by official property directions","fact_state":"SOURCE-CONFIRMED"}
+  ],
+  "architecture": {
+    "known_characteristics": [
+      {"feature":"gold-toned reflective glass exterior","fact_state":"VISUALLY-CONFIRMED","scope":"primary resort tower appearance"},
+      {"feature":"large integrated resort campus rather than one freestanding building","fact_state":"SOURCE-CONFIRMED"},
+      {"feature":"connected convention, beach, aquarium, hotel, retail, event, tram, and parking systems","fact_state":"SOURCE-CONFIRMED"}
+    ],
+    "unresolved": [
+      "authoritative exterior building polygons",
+      "tower-by-tower story counts",
+      "exact roof geometry",
+      "facade dimensions",
+      "material reflectance and PBR values",
+      "service-building identities",
+      "canopies and porte-cochere footprints"
+    ],
+    "gate_state": "PARTIAL_PASS"
+  },
+  "parcel": {"apn":null,"polygon":null,"fact_state":"UNKNOWN","required_source":"Clark County GISMO Assessor parcel polygon layer"},
+  "building_footprints": {
+    "fact_state": "UNKNOWN",
+    "required": [
+      "primary resort tower polygon",
+      "convention center polygons",
+      "Delano tower polygon",
+      "events center polygon",
+      "parking structures",
+      "arrival canopies",
+      "Shark Reef structure",
+      "tram station and guideway interfaces"
+    ]
+  },
+  "terrain": {"elevation_m":null,"fact_state":"UNKNOWN","required_source":"USGS 3DEP sample at footprint-derived model origins"},
+  "relationships": {
+    "connected_properties": [
+      {"target":"Luxor Hotel & Casino","relationship":"Mandalay Place pedestrian retail connection and tram corridor","fact_state":"SOURCE-CONFIRMED"}
+    ],
+    "internal_access_graph": ["public frontage","arrival and valet","parking","convention access","tram connection","pedestrian retail connection"]
+  },
+  "sources": [
+    {"id":"mandalay_bay_official_contact","type":"official_property","url":"https://mandalaybay.mgmresorts.com/en/contact-us.html","supports":["identity","address"]},
+    {"id":"mandalay_bay_official_home","type":"official_property","url":"https://mandalaybay.mgmresorts.com/en.html","supports":["resort identity","beach","Shark Reef","resort campus use"]},
+    {"id":"mandalay_bay_official_meetings","type":"official_property","url":"https://mandalaybay.mgmresorts.com/en/meetings-groups.html","supports":["convention center identity","address"]},
+    {"id":"clark_county_parcels","type":"authoritative_gis_registry","url":"https://maps.clarkcountynv.gov/arcgis/rest/services/GISMO/AssessorMap/FeatureServer/1","supports":["required parcel source","polygon and APN capability"]},
+    {"id":"usgs_3dep","type":"authoritative_elevation_registry","url":"https://www.usgs.gov/3d-elevation-program","supports":["required terrain source"]}
+  ],
+  "gates": {
+    "LOCATION_GATE":"PASS",
+    "PARCEL_GATE":"BLOCKED",
+    "BUILDING_GATE":"BLOCKED",
+    "IDENTITY_GATE":"PASS",
+    "ARCHITECTURE_GATE":"PARTIAL_PASS",
+    "CONTEXT_GATE":"PASS",
+    "SOURCE_GATE":"PASS"
+  },
+  "release": {
+    "semantic_site_graph":true,
+    "road_relationship_graph":true,
+    "identity_and_address_record":true,
+    "final_sprite":false,
+    "final_3d_asset":false,
+    "parcel_aligned_placement":false,
+    "terrain_conforming_placement":false
+  },
+  "generation_status":"evidence_advanced_visual_blocked"
+}
