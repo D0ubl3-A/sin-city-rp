@@ -1,0 +1,27 @@
+{
+  "run_at": "2026-08-03T15:00:09.580204+00:00",
+  "section_id": "SS-02C-PARADISE-ROAD-AIRPORT-CORRIDOR",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {
+    "passed": 11,
+    "total": 11,
+    "results": [
+      {"name":"all_semantic_edges_have_source_refs","passed":true},
+      {"name":"all_source_refs_resolve","passed":true},
+      {"name":"coordinates_not_fabricated","passed":true},
+      {"name":"parcels_not_fabricated","passed":true},
+      {"name":"terrain_not_fabricated","passed":true},
+      {"name":"buildings_not_fabricated","passed":true},
+      {"name":"architecture_blocked_without_buildings","passed":true},
+      {"name":"road_context_has_three_named_roads","passed":true},
+      {"name":"semantic_graph_has_explicit_edges","passed":true},
+      {"name":"visual_release_blocked","passed":true},
+      {"name":"next_section_registered","passed":true}
+    ]
+  },
+  "errors": [],
+  "warnings": ["Current RTC detour data is operational context and must not be treated as permanent road geometry."],
+  "released": ["corridor identity record", "airport transit context graph", "airport airspace regulatory context", "airport height regulatory context"],
+  "blocked": ["authoritative section polygon", "road centerlines and lane geometry", "complete parcel intersection set", "terrain samples", "building footprints and identities", "architecture assets", "final visual section"],
+  "next_section": "SS-02D-UNIVERSITY-CENTER-AND-TROPICANA-NORTH-EAST-QUADRANT"
+}
