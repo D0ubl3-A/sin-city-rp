@@ -1,0 +1,15 @@
+{
+  "section_id": "SS-01D-MANDALAY-BAY",
+  "identity": {"name": "Mandalay Bay Resort and Casino", "address": "3950 S Las Vegas Blvd, Las Vegas, NV 89119", "state": "SOURCE_CONFIRMED"},
+  "coordinates": {"longitude": null, "latitude": null, "utm_x": null, "utm_y": null, "terrain_z_m": null, "state": "UNRESOLVED"},
+  "context": {"verified": ["South Las Vegas Boulevard frontage", "East Diablo Avenue approach", "Russell Road/I-15 approach", "Mandalay Bay Beach", "Michelob ULTRA Arena", "Mandalay Bay Convention Center", "Shark Reef Aquarium", "The Shoppes at Mandalay Place"], "architecture": ["gold-glass curving hotel massing", "36 floors stated by official property page imagery metadata"], "state": "PARTIAL_SOURCE_CONFIRMED"},
+  "parcel": {"apn": null, "polygon": null, "state": "UNRESOLVED"},
+  "buildings": {"footprints": null, "state": "UNRESOLVED"},
+  "terrain": {"elevation_m": null, "state": "UNRESOLVED"},
+  "sources": [
+    {"url": "https://mandalaybay.mgmresorts.com/en/contact-us.html", "type": "official_property"},
+    {"url": "https://mandalaybay.mgmresorts.com/en/entertainment/michelob-ultra-arena.html", "type": "official_property"},
+    {"url": "https://www.clarkcountynv.gov/government/departments/geographic_info_systems/services/data-for-purchase", "type": "authoritative_registry"}
+  ],
+  "gates": {"IDENTITY": "PASS", "CONTEXT": "PASS", "ARCHITECTURE": "PARTIAL_PASS", "COORDINATES": "BLOCKED", "PARCEL": "BLOCKED", "BUILDINGS": "BLOCKED", "TERRAIN": "BLOCKED", "FINAL_VISUAL": "BLOCKED"}
+}

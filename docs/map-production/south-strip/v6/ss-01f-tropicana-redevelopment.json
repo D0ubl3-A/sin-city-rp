@@ -1,0 +1,15 @@
+{
+  "section_id": "SS-01F-TROPICANA-REDEVELOPMENT",
+  "identity": {"name": "Former Tropicana Las Vegas site / Las Vegas Athletics ballpark construction site", "address": "Southeast corner of S Las Vegas Blvd and Tropicana Ave, Las Vegas, NV", "state": "SOURCE_CONFIRMED_CONTEXT_ONLY"},
+  "coordinates": {"longitude": null, "latitude": null, "utm_x": null, "utm_y": null, "terrain_z_m": null, "state": "UNRESOLVED"},
+  "context": {"verified": ["Tropicana resort closed April 2, 2024", "former resort was demolished", "site is under construction for a planned Athletics ballpark", "site lies at the southeast corner of Las Vegas Boulevard and Tropicana Avenue"], "architecture": ["No surviving Tropicana resort asset may be generated as current-state geometry", "planned stadium design is not eligible for final as-built generation"], "state": "SOURCE_CONFIRMED_CURRENT_CONTEXT"},
+  "parcel": {"apn": null, "polygon": null, "state": "UNRESOLVED"},
+  "buildings": {"footprints": null, "state": "DYNAMIC_CONSTRUCTION_UNRESOLVED"},
+  "terrain": {"elevation_m": null, "state": "UNRESOLVED"},
+  "sources": [
+    {"url": "https://apnews.com/article/adabc55cc91d08dda3181edbc6d7984e", "type": "reputable_news"},
+    {"url": "https://talksport.com/sport/baseball/4287902/las-vegas-athletics-stadium-construction-ballys-development-2028/", "type": "current_news"},
+    {"url": "https://www.clarkcountynv.gov/government/departments/geographic_info_systems/services/data-for-purchase", "type": "authoritative_registry"}
+  ],
+  "gates": {"IDENTITY": "PASS", "CONTEXT": "PASS", "ARCHITECTURE": "BLOCKED_DYNAMIC_SITE", "COORDINATES": "BLOCKED", "PARCEL": "BLOCKED", "BUILDINGS": "BLOCKED_DYNAMIC_SITE", "TERRAIN": "BLOCKED", "FINAL_VISUAL": "BLOCKED"}
+}

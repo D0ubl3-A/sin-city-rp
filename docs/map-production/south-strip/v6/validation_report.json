@@ -1,0 +1,21 @@
+{
+  "result": "PARTIAL_PASS",
+  "passed": 12,
+  "total": 12,
+  "errors": [],
+  "warnings": [],
+  "tests": [
+    {"section": "SS-01D-MANDALAY-BAY", "test": "identity_has_source", "passed": true},
+    {"section": "SS-01D-MANDALAY-BAY", "test": "parcel_not_fabricated", "passed": true},
+    {"section": "SS-01D-MANDALAY-BAY", "test": "coordinates_not_fabricated", "passed": true},
+    {"section": "SS-01D-MANDALAY-BAY", "test": "final_visual_blocked", "passed": true},
+    {"section": "SS-01E-MGM-GRAND", "test": "identity_has_source", "passed": true},
+    {"section": "SS-01E-MGM-GRAND", "test": "parcel_not_fabricated", "passed": true},
+    {"section": "SS-01E-MGM-GRAND", "test": "coordinates_not_fabricated", "passed": true},
+    {"section": "SS-01E-MGM-GRAND", "test": "final_visual_blocked", "passed": true},
+    {"section": "SS-01F-TROPICANA-REDEVELOPMENT", "test": "identity_has_source", "passed": true},
+    {"section": "SS-01F-TROPICANA-REDEVELOPMENT", "test": "parcel_not_fabricated", "passed": true},
+    {"section": "SS-01F-TROPICANA-REDEVELOPMENT", "test": "coordinates_not_fabricated", "passed": true},
+    {"section": "SS-01F-TROPICANA-REDEVELOPMENT", "test": "final_visual_blocked", "passed": true}
+  ]
+}
