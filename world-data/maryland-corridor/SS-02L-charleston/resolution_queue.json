@@ -1,0 +1,9 @@
+{
+  "section_id": "SS-02L-MARYLAND-PARKWAY-CHARLESTON-BOULEVARD",
+  "tasks": [
+    {"priority":1,"task":"Recover or recreate the JC_VEGAS_OSM source-local-to-world CRS transformation from the original extractor."},
+    {"priority":2,"task":"Join the transformed 512 m window to the 1,225-tile terrain manifest."},
+    {"priority":3,"task":"Query intersecting Clark County parcels and rights-of-way."},
+    {"priority":4,"task":"Extract the corresponding building-registry subset and resolve identities."}
+  ]
+}
