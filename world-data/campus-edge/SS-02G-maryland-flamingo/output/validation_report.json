@@ -1,0 +1,24 @@
+{
+  "run_at_utc": "2026-08-03T19:00:25.819053+00:00",
+  "section_id": "SS-02G-MARYLAND-PARKWAY-FLAMINGO-CAMPUS-EDGE",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {"passed": 12, "total": 12, "results": [
+    {"name":"sources_unique","passed":true},
+    {"name":"all_edges_sourced","passed":true},
+    {"name":"all_edge_sources_resolve","passed":true},
+    {"name":"no_coordinates_fabricated","passed":true},
+    {"name":"no_parcels_fabricated","passed":true},
+    {"name":"no_terrain_fabricated","passed":true},
+    {"name":"no_footprints_fabricated","passed":true},
+    {"name":"temporary_brt_not_permanent_geometry","passed":true},
+    {"name":"fab1_identity_has_source","passed":true},
+    {"name":"architecture_limited_to_supported_facts","passed":true},
+    {"name":"final_assets_blocked","passed":true},
+    {"name":"next_section_registered","passed":true}
+  ]},
+  "errors": [],
+  "warnings": ["June 2026 BRT construction information is temporary operational context and is excluded from permanent road geometry."],
+  "released": ["section identity dossier", "source registry", "semantic context graph", "FAB-1 identity and partial architecture record", "Flamingo District context"],
+  "blocked": ["authoritative coordinates and section polygon", "APNs and parcel/right-of-way polygons", "road centerlines and lane geometry", "USGS terrain samples", "building footprints", "facade and roof geometry", "materials/PBR textures", "final 3D and sprite assets", "parcel-aligned placement"],
+  "next_section": "SS-02H-MARYLAND-PARKWAY-DESERT-INN-CORRIDOR"
+}
