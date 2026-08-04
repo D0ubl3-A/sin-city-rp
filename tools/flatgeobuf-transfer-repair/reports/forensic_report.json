@@ -1,0 +1,55 @@
+{
+  "run_id": "FGB-TRANSFER-REPAIR-20260803-001",
+  "created_utc": "2026-08-03T23:18:35.380844+00:00",
+  "root_cause": {
+    "status": "CONFIRMED",
+    "input_size_bytes": 79977887,
+    "input_sha256": "a89ed589162d214061ec1fcd832c7c88a8212885577e45472637c6fcdc1d0d6f",
+    "valid_utf8": true,
+    "null_bytes_in_input": 0,
+    "space_bytes_in_input": 24147549,
+    "encoding_reversal_size_bytes": 66090792,
+    "information_loss": "Null bytes were converted to ordinary spaces; original zeros and original spaces are no longer distinguishable."
+  },
+  "validation": {
+    "corrupted_original": {
+      "opened": false,
+      "error": "Fiona/GDAL returned a null FlatGeobuf layer"
+    },
+    "encoding_reversed": {
+      "opened": false,
+      "error": "The recoverable text-encoding layer was reversed, but binary structure remained invalid"
+    },
+    "all_spaces_to_null_trial": {
+      "opened": false,
+      "error": "Replacing all spaces with nulls did not restore a valid layer"
+    },
+    "clean_local_flatgeobuf": {
+      "opened": true,
+      "feature_count": 4,
+      "driver": "FlatGeobuf",
+      "crs": "EPSG:32611",
+      "schema": {
+        "properties": {
+          "name": "str",
+          "class": "str"
+        },
+        "geometry": "LineString"
+      }
+    },
+    "binary_envelope_roundtrip_ok": true,
+    "roundtrip_validation": {
+      "opened": true,
+      "feature_count": 4,
+      "driver": "FlatGeobuf",
+      "crs": "EPSG:32611"
+    },
+    "guard_rejected_corrupted_input": true
+  },
+  "resolution": {
+    "corrupt_copy_status": "QUARANTINED_NOT_PROMOTED",
+    "flatgeobuf_pipeline_status": "FIXED_AND_VALIDATED",
+    "future_transfer_status": "BINARY_SAFE_ENVELOPE_REQUIRED",
+    "exact_real_dataset_recovery": "REQUIRES_ORIGINAL_BINARY_OR_REDOWNLOAD"
+  }
+}
