@@ -253,19 +253,28 @@ function createStreamer() {
 
 if (!window[KEY]) {
   const state = window[KEY] = createStreamer();
-  loadScript(INDEX_URL, "district-index")
-    .then(() => {
-      if (!window.JC_REAL_DISTRICT_INDEX?.districts?.length) throw new Error("JC district index is missing");
-      state.index = window.JC_REAL_DISTRICT_INDEX;
-      state.status = "index-ready";
-      window.dispatchEvent(new CustomEvent("sin-city:jc-district-index-ready", {
-        detail: { districts: state.index.districts.length, buildings: 43500 },
-      }));
-    })
-    .catch((error) => {
-      state.status = "error";
-      state.errors.index = String(error?.message || error);
-    });
+  const params = new URLSearchParams(window.location.search);
+  const automatedBrowser = navigator.webdriver === true && params.get("jcstream") !== "on";
+
+  if (automatedBrowser) {
+    // Keep unrelated Playwright gameplay tests deterministic and offline.
+    // Targeted streaming tests can opt in with ?jcstream=on.
+    state.status = "ci-idle";
+  } else {
+    loadScript(INDEX_URL, "district-index")
+      .then(() => {
+        if (!window.JC_REAL_DISTRICT_INDEX?.districts?.length) throw new Error("JC district index is missing");
+        state.index = window.JC_REAL_DISTRICT_INDEX;
+        state.status = "index-ready";
+        window.dispatchEvent(new CustomEvent("sin-city:jc-district-index-ready", {
+          detail: { districts: state.index.districts.length, buildings: 43500 },
+        }));
+      })
+      .catch((error) => {
+        state.status = "error";
+        state.errors.index = String(error?.message || error);
+      });
+  }
 
   const render = THREE.WebGLRenderer.prototype.render;
   if (!THREE.WebGLRenderer.prototype.__sinCityJcStreaming) {
