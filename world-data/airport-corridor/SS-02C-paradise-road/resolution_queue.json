@@ -1,0 +1,9 @@
+{
+  "section_id": "SS-02C-PARADISE-ROAD-AIRPORT-CORRIDOR",
+  "tasks": [
+    {"priority":1,"gate":"ROAD_GEOMETRY_GATE","task":"Capture authoritative Paradise Road and intersecting road-centerline features with CRS metadata."},
+    {"priority":2,"gate":"PARCEL_GATE","task":"Intersect the approved section polygon with Clark County parcel and right-of-way datasets."},
+    {"priority":3,"gate":"BUILDING_GATE","task":"Capture corridor-wide authoritative building footprints and resolve named properties."},
+    {"priority":4,"gate":"TERRAIN_GATE","task":"Sample USGS 3DEP at approved section vertices and building origins."}
+  ]
+}
