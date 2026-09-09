@@ -1,0 +1,16 @@
+{
+  "section_id": "SS-02G-MARYLAND-PARKWAY-FLAMINGO-CAMPUS-EDGE",
+  "edges": [
+    {"subject":"section:ss02g","predicate":"centered_on_intersection_context","object":"road:maryland_parkway__road:flamingo_road","source_ref":"unlv_fab1"},
+    {"subject":"building:fab1","predicate":"addressed_at","object":"address:1325_flamingo_rd","source_ref":"unlv_fab1"},
+    {"subject":"building:fab1","predicate":"located_east_of","object":"road:maryland_parkway","source_ref":"unlv_fab1"},
+    {"subject":"building:fab1","predicate":"houses","object":"facility:college_of_engineering_robotics_lab","source_ref":"unlv_fab1"},
+    {"subject":"building:fab1","predicate":"houses","object":"facility:unlv_surplus","source_ref":"unlv_fab1"},
+    {"subject":"building:fab1","predicate":"has_floor_count","object":"value:1","source_ref":"unlv_fab1"},
+    {"subject":"building:fab1","predicate":"has_gross_area_sqft","object":"value:64986","source_ref":"unlv_fab1"},
+    {"subject":"district:flamingo","predicate":"includes_context_asset","object":"building:stan_fulton_building","source_ref":"unlv_masterplan"},
+    {"subject":"district:flamingo","predicate":"includes_context_asset","object":"building:paradise_elementary_school","source_ref":"unlv_masterplan"},
+    {"subject":"district:flamingo","predicate":"includes_context_asset","object":"building:unlv_csun_preschool","source_ref":"unlv_masterplan"},
+    {"subject":"road:maryland_parkway","predicate":"underwent_temporary_brt_work_june_2026","object":"segment:tropicana_to_flamingo","source_ref":"unlv_june_2026_brt"}
+  ]
+}

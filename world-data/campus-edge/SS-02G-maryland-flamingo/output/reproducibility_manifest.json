@@ -1,0 +1,13 @@
+{
+  "section_id": "SS-02G-MARYLAND-PARKWAY-FLAMINGO-CAMPUS-EDGE",
+  "branch": "map/ss02g-maryland-flamingo-evidence-v1",
+  "artifacts": [
+    {"path":"world-data/campus-edge/SS-02G-maryland-flamingo/README.md","commit_sha":"5598b5c932989f32b562e4eba3f599ab74bc5fca"},
+    {"path":"world-data/campus-edge/SS-02G-maryland-flamingo/evidence/ss02g_maryland_flamingo_dossier.json","commit_sha":"5fab36b41cc1f986da8b8f3847c2d898f24e36e9"},
+    {"path":"world-data/campus-edge/SS-02G-maryland-flamingo/output/ss02g_semantic_graph.json","commit_sha":"8fc25f16e5ddeb4dfdd1d71964691fbdac93e00f"},
+    {"path":"world-data/campus-edge/SS-02G-maryland-flamingo/output/validation_report.json","commit_sha":"ac35bff95e488993e8185a21278eab6b7c048646"},
+    {"path":"world-data/campus-edge/SS-02G-maryland-flamingo/output/resolution_queue.json","commit_sha":"414ccfeebfb1af1132a704ec737a6c0e80ed80c5"}
+  ],
+  "validation": {"deterministic_checks":"12/12", "errors":0, "warnings":1},
+  "note": "Commit-addressed provenance preserves the exact repository state for every generated artifact."
+}
