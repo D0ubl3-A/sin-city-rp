@@ -1,0 +1,110 @@
+{
+  "schema": "sin-city-section-dossier-v1",
+  "section_id": "SS-02E-MARYLAND-PARKWAY-TROPICANA-CAMPUS-EDGE",
+  "identity": {
+    "name": "Maryland Parkway / Tropicana campus edge",
+    "state": "SOURCE-CONFIRMED",
+    "source_refs": ["unlv_campuses", "unlv_brt_june_2026"]
+  },
+  "coordinates": {
+    "section_polygon": null,
+    "model_origin": null,
+    "crs_transform": null,
+    "state": "UNRESOLVED",
+    "reason": "No preserved authoritative centerline or section-boundary feature response."
+  },
+  "parcels": {
+    "apns": [],
+    "polygons": [],
+    "state": "UNRESOLVED",
+    "reason": "No complete parcel/right-of-way intersection response captured."
+  },
+  "roads": {
+    "confirmed_context": ["Maryland Parkway", "Tropicana Avenue", "Dorothy Avenue"],
+    "geometry": null,
+    "state": "CONTEXT_CONFIRMED_GEOMETRY_BLOCKED"
+  },
+  "terrain": {
+    "samples": [],
+    "state": "UNRESOLVED",
+    "required_source_ref": "usgs_3dep"
+  },
+  "buildings": [
+    {
+      "id": "building:university_gateway",
+      "name": "University Gateway Building",
+      "address": "4700 S. Maryland Pkwy., Las Vegas, NV 89119",
+      "year_opened": 2019,
+      "floors": 7,
+      "gross_sqft": 45675,
+      "uses": ["retail", "apartments", "Public Health", "Graduate College"],
+      "state": "SOURCE-CONFIRMED",
+      "source_ref": "unlv_gateway"
+    },
+    {
+      "id": "building:tropicana_parking_garage",
+      "name": "Tropicana Parking Garage",
+      "address": "4505 S. Maryland Pkwy., Las Vegas, NV 89154",
+      "year_opened": 2010,
+      "floors": 4,
+      "gross_sqft": 657591,
+      "state": "SOURCE-CONFIRMED",
+      "source_ref": "unlv_pkg2"
+    },
+    {
+      "id": "building:graduate_arts_studios",
+      "name": "Graduate Arts Studios",
+      "address": "4570 S. Maryland Pkwy., Las Vegas, NV 89119",
+      "state": "IDENTITY_CONFIRMED",
+      "source_ref": "unlv_building_directory"
+    }
+  ],
+  "architecture": {
+    "state": "PARTIAL_PASS",
+    "released": ["building use, floor count, opening year, gross area where official records exist"],
+    "blocked": ["authoritative footprints", "roof geometry", "facade dimensions", "materials", "PBR textures"]
+  },
+  "context": {
+    "brt_work": {
+      "state": "CURRENT_SOURCE_CONFIRMED",
+      "facts": [
+        "sidewalk, median, utility lateral, and lane-striping work reported for June 2026",
+        "two lanes expected open in each direction during most daytime hours"
+      ],
+      "source_ref": "unlv_brt_june_2026",
+      "warning": "Operational construction context is time-sensitive and not permanent geometry."
+    }
+  },
+  "sources": [
+    {"id":"unlv_campuses","url":"https://www.unlv.edu/maps/campuses","authority":"University of Nevada, Las Vegas"},
+    {"id":"unlv_building_directory","url":"https://www.unlv.edu/maps/buildings/list","authority":"University of Nevada, Las Vegas"},
+    {"id":"unlv_gateway","url":"https://www.unlv.edu/maps/gtw","authority":"University of Nevada, Las Vegas"},
+    {"id":"unlv_pkg2","url":"https://www.unlv.edu/maps/pkg-2","authority":"University of Nevada, Las Vegas"},
+    {"id":"unlv_brt_june_2026","url":"https://www.unlv.edu/announcement/university-notifications/maryland-parkway-construction-impacts-june","authority":"University of Nevada, Las Vegas"},
+    {"id":"clark_gis","url":"https://www.clarkcountynv.gov/government/departments/information_technology/it_home/our_core_work/gis","authority":"Clark County, Nevada"},
+    {"id":"usgs_3dep","url":"https://www.usgs.gov/3d-elevation-program","authority":"U.S. Geological Survey"}
+  ],
+  "gates": {
+    "IDENTITY_GATE": "PASS",
+    "SOURCE_GATE": "PASS",
+    "SEMANTIC_EDGE_GATE": "PASS",
+    "BUILDING_IDENTITY_GATE": "PASS",
+    "ARCHITECTURE_GATE": "PARTIAL_PASS",
+    "COORDINATE_GATE": "BLOCKED",
+    "PARCEL_GATE": "BLOCKED",
+    "ROAD_GEOMETRY_GATE": "BLOCKED",
+    "TERRAIN_GATE": "BLOCKED",
+    "FOOTPRINT_GATE": "BLOCKED",
+    "FINAL_ASSET_GATE": "BLOCKED"
+  },
+  "release": {
+    "identity_record": true,
+    "semantic_graph": true,
+    "building_identity_records": true,
+    "partial_architecture_records": true,
+    "road_geometry": false,
+    "terrain_mesh": false,
+    "final_building_assets": false,
+    "final_visual_section": false
+  }
+}

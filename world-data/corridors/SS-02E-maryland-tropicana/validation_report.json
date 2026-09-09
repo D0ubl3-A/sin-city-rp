@@ -1,0 +1,26 @@
+{
+  "section_id": "SS-02E-MARYLAND-PARKWAY-TROPICANA-CAMPUS-EDGE",
+  "pipeline_result": "PARTIAL_PASS",
+  "tests": {
+    "passed": 11,
+    "total": 11,
+    "results": [
+      {"name":"source_refs_resolve","passed":true},
+      {"name":"all_edges_sourced","passed":true},
+      {"name":"coordinates_not_fabricated","passed":true},
+      {"name":"parcels_not_fabricated","passed":true},
+      {"name":"terrain_not_fabricated","passed":true},
+      {"name":"building_records_sourced","passed":true},
+      {"name":"architecture_limited","passed":true},
+      {"name":"road_geometry_blocked","passed":true},
+      {"name":"current_context_flagged","passed":true},
+      {"name":"final_assets_blocked","passed":true},
+      {"name":"next_section_registered","passed":true}
+    ]
+  },
+  "errors": [],
+  "warnings": ["June 2026 BRT construction facts are operational and must not be treated as permanent road geometry."],
+  "released": ["section identity", "semantic context graph", "three building identity records", "partial architecture facts", "current BRT context"],
+  "blocked": ["section polygon", "surveyed model origin", "APNs and parcel polygons", "road/lane/curb/sidewalk geometry", "USGS terrain samples", "authoritative building footprints", "final models and textures"],
+  "next_section": "SS-02F-MARYLAND-PARKWAY-HARMON-CAMPUS-EDGE"
+}

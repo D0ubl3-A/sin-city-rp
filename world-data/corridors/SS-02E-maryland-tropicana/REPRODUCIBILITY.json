@@ -1,0 +1,17 @@
+{
+  "section_id": "SS-02E-MARYLAND-PARKWAY-TROPICANA-CAMPUS-EDGE",
+  "branch": "map/ss02e-maryland-tropicana-v13",
+  "ordered_file_commits": [
+    {"path":"world-data/corridors/SS-02E-maryland-tropicana/README.md","commit_sha":"44213c23126b8af9f67d91db3d7a4f48798bdf59"},
+    {"path":"world-data/corridors/SS-02E-maryland-tropicana/section_dossier.json","commit_sha":"9395aa40d64fb29cd86af006cdde393ed3c62eed"},
+    {"path":"world-data/corridors/SS-02E-maryland-tropicana/semantic_graph.json","commit_sha":"7bfed895a15a70d332d1518d8cd6a7dd5d95a126"},
+    {"path":"world-data/corridors/SS-02E-maryland-tropicana/validation_report.json","commit_sha":"fc26715922daf83af87435bd251d556d0183cf5a"},
+    {"path":"world-data/corridors/SS-02E-maryland-tropicana/resolution_queue.json","commit_sha":"604cae59add16f680485d55025bf41fd84066d1e"}
+  ],
+  "validation_contract": {
+    "confirmed_facts_require_resolvable_source_ref": true,
+    "unresolved_spatial_fields_remain_null_or_empty": true,
+    "time_sensitive_context_is_explicitly_flagged": true,
+    "final_assets_require_coordinate_parcel_terrain_and_footprint_gates": true
+  }
+}

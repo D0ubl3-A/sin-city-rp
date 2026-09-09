@@ -1,0 +1,16 @@
+{
+  "section_id": "SS-02E-MARYLAND-PARKWAY-TROPICANA-CAMPUS-EDGE",
+  "edges": [
+    {"subject":"section:ss02e","predicate":"contains_corridor","object":"road:maryland_parkway","source_ref":"unlv_campuses"},
+    {"subject":"section:ss02e","predicate":"bounded_contextually_by","object":"road:tropicana_avenue","source_ref":"unlv_brt_june_2026"},
+    {"subject":"campus:unlv_maryland","predicate":"addressed_on","object":"road:maryland_parkway","source_ref":"unlv_campuses"},
+    {"subject":"building:university_gateway","predicate":"located_near","object":"intersection:maryland_parkway_dorothy_avenue","source_ref":"unlv_gateway"},
+    {"subject":"building:university_gateway","predicate":"contains_use","object":"use:retail","source_ref":"unlv_gateway"},
+    {"subject":"building:university_gateway","predicate":"contains_use","object":"use:apartments","source_ref":"unlv_gateway"},
+    {"subject":"building:university_gateway","predicate":"contains_use","object":"use:public_health","source_ref":"unlv_gateway"},
+    {"subject":"building:tropicana_parking_garage","predicate":"serves","object":"building:thomas_mack_center","source_ref":"unlv_pkg2"},
+    {"subject":"building:tropicana_parking_garage","predicate":"serves","object":"building:cox_pavilion","source_ref":"unlv_pkg2"},
+    {"subject":"project:maryland_parkway_brt","predicate":"under_construction_on","object":"road:maryland_parkway","source_ref":"unlv_brt_june_2026"},
+    {"subject":"project:maryland_parkway_brt","predicate":"construction_extent","object":"segment:tropicana_to_flamingo","source_ref":"unlv_brt_june_2026"}
+  ]
+}
