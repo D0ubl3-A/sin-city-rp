@@ -1,0 +1,40 @@
+{
+  "schema": "sin-city-section-dossier-v2",
+  "section_id": "SS-02L-MARYLAND-PARKWAY-CHARLESTON-BOULEVARD",
+  "identity": {"name": "Maryland Parkway / Charleston Boulevard intersection", "state": "PASS", "source_refs": ["JC_VEGAS_OSM"]},
+  "coordinates": {
+    "source_local_anchor": {"x": 10640.75, "y": 7191.15, "derivation": "midpoint of recovered opposing carriageway centerlines"},
+    "section_bounds_source_local": {"min_x": 10384.75, "min_y": 6935.15, "max_x": 10896.75, "max_y": 7447.15},
+    "source_local_units": "JC_VEGAS_OSM dataset units",
+    "world_crs_anchor": null,
+    "state": "PARTIAL_PASS",
+    "restriction": "No source-local-to-EPSG:32611 transform was present in the recovered evidence."
+  },
+  "roads": {
+    "feature_count": 6,
+    "names": ["East Charleston Boulevard", "South Maryland Parkway"],
+    "state": "PASS_SOURCE_LOCAL",
+    "geometry_scope": "Recovered carriageway centerlines only; no inferred lane widths, curbs, medians or sidewalks."
+  },
+  "parcels": {"features": [], "state": "BLOCKED", "reason": "No intersecting Clark County parcel response was recovered for the world-aligned section."},
+  "terrain": {"tile_reference": null, "samples": [], "state": "BLOCKED", "reason": "The terrain manifest cannot be joined without the missing coordinate transform."},
+  "buildings": {"features": [], "identities": [], "state": "BLOCKED", "reason": "No building-registry subset was recovered for this source-local window."},
+  "architecture": {"records": [], "state": "BLOCKED", "reason": "Verified building identities and footprints are prerequisites."},
+  "sources": [
+    {"id": "JC_VEGAS_OSM", "authority": "OpenStreetMap contributors", "license": "ODbL", "dataset_bbox_latlon": [36.05, -115.25, 36.22, -115.08], "dataset_dimensions": {"width": 16000, "height": 20000}},
+    {"id": "LV_TERRAIN_FACTORY_MANIFEST", "authority": "Sin City world-factory artifact", "crs": "EPSG:32611", "promotion_limit": "No real terrain sample is linked to this source-local intersection."}
+  ],
+  "gates": {
+    "IDENTITY_GATE": "PASS",
+    "SOURCE_GATE": "PASS",
+    "SOURCE_LOCAL_COORDINATE_GATE": "PASS",
+    "ROAD_SOURCE_GATE": "PASS",
+    "WORLD_CRS_COORDINATE_GATE": "BLOCKED",
+    "TERRAIN_JOIN_GATE": "BLOCKED",
+    "PARCEL_GATE": "BLOCKED",
+    "BUILDING_GATE": "BLOCKED",
+    "ARCHITECTURE_GATE": "BLOCKED",
+    "FINAL_VISUAL_GATE": "BLOCKED"
+  },
+  "released_assets": ["intersection identity", "derived source-local intersection anchor", "512 x 512 source-local section bounds", "six recovered carriageway centerline features", "road classes and tagged speed metadata", "source and license ledger"]
+}
